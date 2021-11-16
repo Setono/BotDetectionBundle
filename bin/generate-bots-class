@@ -8,6 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\SingleCommandApplication;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Yaml\Yaml;
+use Webmozart\Assert\Assert;
 
 set_time_limit(0);
 
@@ -30,9 +31,19 @@ require __DIR__.'/../vendor/autoload.php';
         $io->progressAdvance();
 
         // generate regex
-        $regex = '#(' . implode(')|(', array_map(static function(array $item): string {
-            return $item['regex'];
-        }, $data)) . ')#';
+        $testRegex = static function(string $combinedRegex, string $lastRegex): void
+        {
+            // It doesn't matter what the subject is. All we want to test is if it compiles
+            Assert::notFalse(preg_match($combinedRegex, 'Test string'), $lastRegex . ' failed');
+        };
+
+        $regexes = [];
+        $regex = null;
+        foreach ($data as $item) {
+            $regexes[] = '(' . $item['regex'] . ')';
+            $regex = '#' . implode('|', $regexes) . '#';
+            $testRegex($regex, $item['regex']);
+        }
         $io->progressAdvance();
 
         // generate class

@@ -29,6 +29,6 @@ final class BotDetector implements BotDetectorInterface
             }
         }
 
-        return preg_match(sprintf('/%s/', Bots::REGEX), $userAgent) === 1;
+        return preg_match(Bots::REGEX, $userAgent) === 1;
     }
 }

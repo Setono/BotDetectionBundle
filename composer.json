@@ -19,13 +19,15 @@
     },
     "require-dev": {
         "infection/infection": "^0.25.0",
+        "phpbench/phpbench": "^1.2",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-phpunit": "^0.16.1",
         "psalm/plugin-symfony": "^3.0",
         "roave/security-advisories": "dev-latest",
         "setono/code-quality-pack": "^2.1.3",
         "symfony/console": "^5.3",
-        "symfony/yaml": "^5.3"
+        "symfony/yaml": "^5.3",
+        "webmozart/assert": "^1.10"
     },
     "config": {
         "sort-packages": true
