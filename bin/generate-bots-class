@@ -1,0 +1,59 @@
+#!/usr/bin/env php
+<?php
+
+use Nette\PhpGenerator\PhpFile;
+use Nette\PhpGenerator\PsrPrinter;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\SingleCommandApplication;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Yaml\Yaml;
+
+set_time_limit(0);
+
+require __DIR__.'/../vendor/autoload.php';
+
+(new SingleCommandApplication())
+    ->setName('Generate bots class')
+    ->setVersion('1.0.0')
+    ->setHelp('This command will generate the Setono\BotDetectionBundle\BotDetector\Bots class')
+    ->setCode(static function (InputInterface $input, OutputInterface $output) {
+        $io = new SymfonyStyle($input, $output);
+        $io->progressStart();
+
+        // download
+        $yaml = file_get_contents('https://raw.githubusercontent.com/matomo-org/device-detector/master/regexes/bots.yml');
+        $io->progressAdvance();
+
+        // parse
+        $data = Yaml::parse($yaml);
+        $io->progressAdvance();
+
+        // generate regex
+        $regex = '#(' . implode(')|(', array_map(static function(array $item): string {
+            return $item['regex'];
+        }, $data)) . ')#';
+        $io->progressAdvance();
+
+        // generate class
+        $file = new PhpFile();
+        $file->addComment('This file is auto-generated. Do not edit');
+        $file->setStrictTypes();
+
+        $namespace = $file->addNamespace('Setono\BotDetectionBundle\BotDetector');
+
+        $class = $namespace->addClass('Bots');
+
+        $class
+            ->setFinal()
+            ->addConstant('REGEX', $regex)->setPublic()
+        ;
+
+        $printer = new PsrPrinter();
+
+        file_put_contents(__DIR__ . '/../src/BotDetector/Bots.php', $printer->printFile($file));
+        $io->progressAdvance();
+
+        $io->progressFinish();
+    })
+    ->run();
