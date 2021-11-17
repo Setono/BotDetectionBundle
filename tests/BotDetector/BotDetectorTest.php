@@ -17,33 +17,33 @@ final class BotDetectorTest extends TestCase
     /**
      * @test
      */
-    public function it_uses_request_stack_if_user_agent_is_null(): void
+    public function it_uses_request_stack_if_request_is_null(): void
     {
         $requestStack = new RequestStack();
         $requestStack->push(new Request([], [], [], [], [], ['HTTP_USER_AGENT' => 'Googlebot']));
         $botDetector = new BotDetector($requestStack);
-        self::assertTrue($botDetector->isBot());
+        self::assertTrue($botDetector->isBotRequest());
     }
 
     /**
      * @test
      */
-    public function it_returns_false_if_no_user_agent_is_provided_and_no_request_is_present(): void
+    public function it_returns_false_if_no_request_is_provided_and_no_request_is_present(): void
     {
         $botDetector = new BotDetector(new RequestStack());
-        self::assertFalse($botDetector->isBot());
+        self::assertFalse($botDetector->isBotRequest());
     }
 
     /**
      * @test
      */
-    public function it_returns_false_if_no_user_agent_is_provided_and_the_request_does_not_have_a_user_agent_header(): void
+    public function it_returns_false_if_no_request_is_provided_and_the_request_does_not_have_a_user_agent_header(): void
     {
         $requestStack = new RequestStack();
         $requestStack->push(new Request());
         $botDetector = new BotDetector($requestStack);
 
-        self::assertFalse($botDetector->isBot());
+        self::assertFalse($botDetector->isBotRequest());
     }
 
     /**
