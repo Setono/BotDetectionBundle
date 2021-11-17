@@ -19,6 +19,7 @@
     },
     "require-dev": {
         "infection/infection": "^0.25.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "phpbench/phpbench": "^1.2",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-phpunit": "^0.16.1",
