@@ -18,7 +18,30 @@ to `bundles.php`.
 
 ## Usage
 
-TODO
+```php
+<?php
+
+use Setono\BotDetectionBundle\BotDetector\BotDetectorInterface;
+
+final class YourService
+{
+    private BotDetectorInterface $botDetector;
+
+    public function __construct(BotDetectorInterface $botDetector)
+    {
+        $this->botDetector = $botDetector;
+    }
+
+    public function yourAction(): void
+    {
+        if ($this->botDetector->isBotRequest()) {
+            // do something to this bot!
+        }
+
+        // ...
+    }
+}
+```
 
 [ico-version]: https://poser.pugx.org/setono/bot-detection-bundle/v/stable
 [ico-unstable-version]: https://poser.pugx.org/setono/bot-detection-bundle/v/unstable
