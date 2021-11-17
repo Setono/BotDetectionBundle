@@ -7,7 +7,7 @@
         </include>
     </coverage>
     <testsuites>
-        <testsuite name="Consent Bundle Test Suite">
+        <testsuite name="Bot Detection Bundle Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
