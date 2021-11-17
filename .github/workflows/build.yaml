@@ -58,6 +58,7 @@ jobs:
                     - "8.0"
 
                 dependencies:
+                    - "lowest"
                     - "highest"
 
                 symfony:
@@ -74,7 +75,7 @@ jobs:
                     coverage: "none"
                     extensions: "${{ env.PHP_EXTENSIONS }}"
                     php-version: "${{ matrix.php-version }}"
-                    tools: "composer-require-checker:3.1.0, composer-unused, flex" # todo using 3.1.0 until this issue is fixed: https://github.com/maglnet/ComposerRequireChecker/issues/281
+                    tools: "composer-require-checker, composer-unused, flex"
 
             -   name: "Install composer dependencies"
                 uses: "ramsey/composer-install@v1"
@@ -102,6 +103,10 @@ jobs:
 
                 dependencies:
                     - "highest"
+                        
+                symfony:
+                    - "^4.4"
+                    - "^5.3"
 
         steps:
             -   name: "Checkout"
@@ -113,9 +118,12 @@ jobs:
                     php-version: "${{ matrix.php-version }}"
                     extensions: "${{ env.PHP_EXTENSIONS }}"
                     coverage: "none"
+                    tools: "flex"
 
             -   name: "Install composer dependencies"
                 uses: "ramsey/composer-install@v1"
+                env:
+                    SYMFONY_REQUIRE: "${{ matrix.symfony }}"
                 with:
                     dependency-versions: "${{ matrix.dependencies }}"
 
@@ -137,9 +145,9 @@ jobs:
                     - "lowest"
                     - "highest"
 
-                exclude:
-                    -   php-version: "8.0"
-                        dependencies: "lowest"
+                symfony:
+                    - "^4.4"
+                    - "^5.3"
 
         steps:
             -   name: "Checkout"
@@ -151,9 +159,12 @@ jobs:
                     php-version: "${{ matrix.php-version }}"
                     extensions: "${{ env.PHP_EXTENSIONS }}"
                     coverage: "none"
+                    tools: "flex"
 
             -   name: "Install composer dependencies"
                 uses: "ramsey/composer-install@v1"
+                env:
+                    SYMFONY_REQUIRE: "${{ matrix.symfony }}"
                 with:
                     dependency-versions: "${{ matrix.dependencies }}"
 
@@ -208,7 +219,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
+                    - "8.0"
 
                 dependencies:
                     - "highest"
@@ -232,4 +243,4 @@ jobs:
             -   name: "Run infection"
                 run: "vendor/bin/infection"
                 env:
-                    STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+                    STRYKER_DASHBOARD_API_KEY: "${{ secrets.STRYKER_DASHBOARD_API_KEY }}"
