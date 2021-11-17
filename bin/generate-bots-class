@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PsrPrinter;
 use Symfony\Component\Console\Input\InputInterface;
@@ -40,8 +41,8 @@ require __DIR__.'/../vendor/autoload.php';
         $regexes = [];
         $regex = null;
         foreach ($data as $item) {
-            $regexes[] = '(' . $item['regex'] . ')';
-            $regex = '#' . implode('|', $regexes) . '#';
+            $regexes[] = '(' . str_replace(' ', '\s', $item['regex']) . ")\n";
+            $regex = '#' . implode('|', $regexes) . '#x';
             $testRegex($regex, $item['regex']);
         }
         $io->progressAdvance();
@@ -57,7 +58,7 @@ require __DIR__.'/../vendor/autoload.php';
 
         $class
             ->setFinal()
-            ->addConstant('REGEX', $regex)->setPublic()
+            ->addConstant('REGEX', new Literal(sprintf('"%s"', $regex)))->setPublic()
         ;
 
         $printer = new PsrPrinter();
