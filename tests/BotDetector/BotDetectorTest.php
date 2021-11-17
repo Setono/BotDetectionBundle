@@ -6,6 +6,7 @@ namespace Setono\BotDetectionBundle\Tests\BotDetector;
 
 use PHPUnit\Framework\TestCase;
 use Setono\BotDetectionBundle\BotDetector\BotDetector;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -13,6 +14,38 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 final class BotDetectorTest extends TestCase
 {
+    /**
+     * @test
+     */
+    public function it_uses_request_stack_if_user_agent_is_null(): void
+    {
+        $requestStack = new RequestStack();
+        $requestStack->push(new Request([], [], [], [], [], ['HTTP_USER_AGENT' => 'Googlebot']));
+        $botDetector = new BotDetector($requestStack);
+        self::assertTrue($botDetector->isBot());
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_false_if_no_user_agent_is_provided_and_no_request_is_present(): void
+    {
+        $botDetector = new BotDetector(new RequestStack());
+        self::assertFalse($botDetector->isBot());
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_false_if_no_user_agent_is_provided_and_the_request_does_not_have_a_user_agent_header(): void
+    {
+        $requestStack = new RequestStack();
+        $requestStack->push(new Request());
+        $botDetector = new BotDetector($requestStack);
+
+        self::assertFalse($botDetector->isBot());
+    }
+
     /**
      * @dataProvider getBots
      * @test
