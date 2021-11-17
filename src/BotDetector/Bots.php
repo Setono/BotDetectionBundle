@@ -70,7 +70,7 @@ final class Bots
     |(Exabot|ExaleadCloudview)
     |(ExactSeek\sCrawler)
     |(Ezooms)
-    |(facebookexternalhit|facebookplatform|facebookexternalua)
+    |(facebookexternalhit|facebookplatform|facebookexternalua|facebookcatalog)
     |(Feedbin)
     |(FeedBurner)
     |(Feed\sWrangler)

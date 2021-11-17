@@ -44,7 +44,7 @@ return [
     'facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)',
     'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)',
     'facebookexternalhit/1.1',
-    // 'facebookcatalog/1.0', todo readd when this PR is merged and released: https://github.com/matomo-org/device-detector/pull/6911
+    'facebookcatalog/1.0',
 
     // alexa
     'ia_archiver (+http://www.alexa.com/site/help/webmasters crawler@alexa.com)',
