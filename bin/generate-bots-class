@@ -41,7 +41,7 @@ require __DIR__.'/../vendor/autoload.php';
         $regexes = [];
         $regex = null;
         foreach ($data as $item) {
-            $regexes[] = '(' . str_replace(' ', '\s', $item['regex']) . ")\n";
+            $regexes[] = str_replace(' ', '\s', $item['regex']) . "\n";
             $regex = '#' . implode('|', $regexes) . '#x';
             $testRegex($regex, $item['regex']);
         }
