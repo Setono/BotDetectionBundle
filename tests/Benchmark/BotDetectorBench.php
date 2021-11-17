@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Setono\BotDetectionBundle\Tests\Benchmark;
@@ -21,7 +22,7 @@ final class BotDetectorBench
         $bots = require __DIR__ . '/../data/bots.php';
 
         foreach ($bots as $bot) {
-            $detector->isBot('Googlebot');
+            $detector->isBot($bot);
         }
     }
 }

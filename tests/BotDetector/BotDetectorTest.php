@@ -24,10 +24,34 @@ final class BotDetectorTest extends TestCase
     }
 
     /**
+     * @dataProvider getHumanUserAgents
+     * @test
+     */
+    public function it_does_not_detect_common_human_user_agents(string $userAgent): void
+    {
+        $botDetector = new BotDetector(new RequestStack());
+        self::assertFalse($botDetector->isBot($userAgent));
+    }
+
+    /**
      * @return iterable<array-key, array<array-key, string>>
      */
     public function getBots(): iterable
     {
-        yield ['Googlebot'];
+        $bots = require __DIR__ . '/../data/bots.php';
+        foreach ($bots as $bot) {
+            yield [$bot];
+        }
+    }
+
+    /**
+     * @return iterable<array-key, array<array-key, string>>
+     */
+    public function getHumanUserAgents(): iterable
+    {
+        $humans = require __DIR__ . '/../data/humans.php';
+        foreach ($humans as $human) {
+            yield [$human];
+        }
     }
 }
