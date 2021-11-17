@@ -11,6 +11,9 @@ final class BotDetector implements BotDetectorInterface
 {
     private RequestStack $requestStack;
 
+    /** @var array<string, bool> */
+    private array $cache = [];
+
     public function __construct(RequestStack $requestStack)
     {
         $this->requestStack = $requestStack;
@@ -18,7 +21,11 @@ final class BotDetector implements BotDetectorInterface
 
     public function isBot(string $userAgent): bool
     {
-        return preg_match(Bots::REGEX, $userAgent) === 1;
+        if (!isset($this->cache[$userAgent])) {
+            $this->cache[$userAgent] = preg_match(Bots::REGEX, $userAgent) === 1;
+        }
+
+        return $this->cache[$userAgent];
     }
 
     public function isBotRequest(Request $request = null): bool
