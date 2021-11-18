@@ -9,20 +9,40 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 final class BotDetector implements BotDetectorInterface
 {
-    private RequestStack $requestStack;
-
     /** @var array<string, bool> */
     private array $cache = [];
 
-    public function __construct(RequestStack $requestStack)
+    private RequestStack $requestStack;
+
+    /** @var array<array-key, string> */
+    private array $popular;
+
+    public function __construct(RequestStack $requestStack, array $popular = null)
     {
         $this->requestStack = $requestStack;
+        if (null === $popular) {
+            $popular = [
+                'Googlebot',
+                'Bingbot',
+                'Yahoo! Slurp',
+                'DuckDuckBot',
+                'Baiduspider',
+                'YandexBot',
+                'facebookexternalhit',
+                'facebookcatalog',
+                'ia_archiver',
+            ];
+        }
+
+        $this->popular = $popular;
     }
 
     public function isBot(string $userAgent): bool
     {
         if (!isset($this->cache[$userAgent])) {
-            $this->cache[$userAgent] = preg_match(Bots::REGEX, $userAgent) === 1;
+            $minimalRegex = '#' . implode('|', $this->popular) . '#';
+            $minimalMatch = preg_match($minimalRegex, $userAgent) === 1;
+            $this->cache[$userAgent] = $minimalMatch ?: preg_match(Bots::REGEX, $userAgent) === 1;
         }
 
         return $this->cache[$userAgent];

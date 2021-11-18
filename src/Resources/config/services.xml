@@ -2,11 +2,31 @@
 
 <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <!--
+        Use this collection to add popular bots to the bot detector. This will speed up detection when the bot is one of these.
+        These are regexes that should match the user agent of the respective bot.
+        -->
+        <parameter type="collection" key="setono_bot_detection.popular_bots">
+            <parameter>Googlebot</parameter>
+            <parameter>Bingbot</parameter>
+            <parameter>Yahoo! Slurp</parameter>
+            <parameter>DuckDuckBot</parameter>
+            <parameter>Baiduspider</parameter>
+            <parameter>YandexBot</parameter>
+            <parameter>facebookexternalhit</parameter>
+            <parameter>facebookcatalog</parameter>
+            <parameter>ia_archiver</parameter>
+        </parameter>
+    </parameters>
     <services>
         <service id="Setono\BotDetectionBundle\BotDetector\BotDetectorInterface"
                  alias="setono_bot_detection.bot_detector.default"/>
 
         <service id="setono_bot_detection.bot_detector.default"
-                 class="Setono\BotDetectionBundle\BotDetector\BotDetector"/>
+                 class="Setono\BotDetectionBundle\BotDetector\BotDetector">
+            <argument type="service" id="request_stack"/>
+            <argument>%setono_bot_detection.popular_bots%</argument>
+        </service>
     </services>
 </container>
