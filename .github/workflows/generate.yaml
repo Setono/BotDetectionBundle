@@ -34,3 +34,6 @@ jobs:
 
             -   name: "Generate Bots class"
                 run: "php bin/generate-bots-class"
+                
+            -   name: "Create Pull Request"
+                uses: "peter-evans/create-pull-request@v3"
