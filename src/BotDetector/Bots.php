@@ -376,6 +376,7 @@ final class Bots
     |DMBrowser/\d+|DMBrowser-[UB]V
     |ThinkChaos/
     |DataForSeoBot
+    |Discordbot/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9])|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
