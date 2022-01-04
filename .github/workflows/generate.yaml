@@ -1,0 +1,36 @@
+name: "generate"
+on:
+    workflow_dispatch: ~ 
+
+jobs:
+    generate:
+        name: "Generate Bots class"
+
+        runs-on: "ubuntu-latest"
+
+        strategy:
+            matrix:
+                php-version:
+                    - "8.0"
+
+                dependencies:
+                    - "highest"
+                
+        steps:
+            -   name: "Checkout"
+                uses: "actions/checkout@v2"
+
+            -   name: "Setup PHP, with composer and extensions"
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    php-version: "${{ matrix.php-version }}"
+                    extensions: "${{ env.PHP_EXTENSIONS }}"
+                    coverage: "none"
+
+            -   name: "Install composer dependencies"
+                uses: "ramsey/composer-install@v1"
+                with:
+                    dependency-versions: "${{ matrix.dependencies }}"
+
+            -   name: "Generate Bots class"
+                run: "php bin/generate-bots-class"
