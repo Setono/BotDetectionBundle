@@ -1,8 +1,8 @@
 {
     "name": "setono/bot-detection-bundle",
-    "type": "symfony-bundle",
     "description": "A Symfony bundle that allows you to test if a user agent is a bot",
     "license": "MIT",
+    "type": "symfony-bundle",
     "authors": [
         {
             "name": "Joachim Løvgaard",
@@ -31,14 +31,7 @@
         "symfony/yaml": "^4.4 || ^5.3",
         "webmozart/assert": "^1.10"
     },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
-    },
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Setono\\BotDetectionBundle\\": "src/"
@@ -49,7 +42,14 @@
             "Setono\\BotDetectionBundle\\Tests\\": "tests/"
         }
     },
-    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
     "scripts": {
         "analyse": "psalm --threads=8",
         "bench": "phpbench run tests/Benchmark --report=default",
