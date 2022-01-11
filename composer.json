@@ -17,7 +17,7 @@
         "symfony/http-kernel": "^4.4 || ^5.1.5"
     },
     "require-dev": {
-        "infection/infection": "^0.25.0",
+        "infection/infection": "^0.25.0 || ^0.26.0",
         "matomo/device-detector": "^5.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "nette/php-generator": "^3.6",
