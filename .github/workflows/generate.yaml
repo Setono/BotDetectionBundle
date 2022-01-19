@@ -1,6 +1,8 @@
 name: "generate"
 on:
-    workflow_dispatch: ~ 
+    workflow_dispatch: ~
+    schedule:
+        -   cron: "0 8 * * 1" # At 08:00 on Monday
 
 jobs:
     generate:
@@ -15,7 +17,7 @@ jobs:
 
                 dependencies:
                     - "highest"
-                
+
         steps:
             -   name: "Checkout"
                 uses: "actions/checkout@v2"
@@ -34,6 +36,6 @@ jobs:
 
             -   name: "Generate Bots class"
                 run: "php bin/generate-bots-class"
-                
+
             -   name: "Create Pull Request"
                 uses: "peter-evans/create-pull-request@v3"
