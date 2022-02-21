@@ -98,7 +98,7 @@ final class Bots
     |Seznam-Zbozi-robot
     |Heurekabot-Feed
     |ShopAlike
-    |AdsBot-Google|Adwords-(DisplayAds|Express|Instant)|Google\sWeb\sPreview|Google[\s-]Publisher[\s-]Plugin|Google-(Ads-Qualify|Adwords|AMPHTML|Assess|HotelAdsVerifier|Read-Aloud|Shopping-Quality|Site-Verification|speakr|Test|Youtube-Links)|(APIs|DuplexWeb|Feedfetcher|Mediapartners)-Google|Googlebot|GoogleProducer|Google.*/\+/web/snippet
+    |AdsBot-Google|Adwords-(DisplayAds|Express|Instant)|Google\sWeb\sPreview|Google[\s-]Publisher[\s-]Plugin|Google-(Ads-Conversions|Ads-Qualify|Adwords|AMPHTML|Assess|HotelAdsVerifier|Read-Aloud|Shopping-Quality|Site-Verification|speakr|Stale-Content-Probe|Test|Youtube-Links)|(APIs|DuplexWeb|Feedfetcher|Mediapartners)-Google|Googlebot|GoogleProducer|Google.*/\+/web/snippet
     |heritrix
     |HubSpot\s
     |HTTPMon
@@ -236,7 +236,7 @@ final class Bots
     |YahooCacheSystem
     |Y!J-BRW
     |Yandex(SpravBot|ScreenshotBot|MobileBot|AccessibilityBot|ForDomain|Vertis|Market|Catalog|Calendar|Sitelinks|AdNet|Pagechecker|Webmaster|Media|Video|Bot|Images|Antivirus|Direct|Blogs|Favicons|ImageResizer|Verticals|News|Metrika|\.Gazeta\sBot)|YaDirectFetcher|YandexTurbo|YandexTracker|YandexSearchShop|YandexRCA|YandexPartner|YandexOntoDBAPI|YandexOntoDB|YandexMobileScreenShotBot
-    |Yeti|NaverJapan
+    |Yeti|NaverJapan|AdsBot-Naver
     |YoudaoBot
     |YOURLS\sv[0-9]
     |YRSpider|YYSpider
@@ -274,7 +274,7 @@ final class Bots
     |AdMantX.*admantx\.com
     |Server\sDensity\sService\sMonitoring.*
     |RSSRadio\s\(Push\sNotification\sScanner;support@dorada\.co\.uk\)
-    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!\sBuild)|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent)
+    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!\sBuild)|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex)
     |^sentry
     |^Spotify
     |The\sKnowledge\sAI
@@ -380,6 +380,11 @@ final class Bots
     |Linespider/([\d+.]+)
     |Cincraw/([\d+.]+)
     |CISPA\sWeb\sAnalyzer
+    |IonCrawl
+    |Crawldad
+    |https://securitytxt-scan.cs.hm.edu/
+    |TigerBot/([\d+.]+)
+    |TestCrawler/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
