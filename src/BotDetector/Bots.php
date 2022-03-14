@@ -276,7 +276,7 @@ final class Bots
     |AdMantX.*admantx\.com
     |Server\sDensity\sService\sMonitoring.*
     |RSSRadio\s\(Push\sNotification\sScanner;support@dorada\.co\.uk\)
-    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise)
+    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient)
     |^sentry
     |^Spotify
     |The\sKnowledge\sAI
@@ -392,6 +392,9 @@ final class Bots
     |OnalyticaBot
     |deepnoc
     |Newslitbot/([\d+.]+)
+    |um-LN/([\d+.]+)
+    |Abonti/([\d+.]+)
+    |collection@infegy.com
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
