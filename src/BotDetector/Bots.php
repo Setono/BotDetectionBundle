@@ -55,7 +55,7 @@ final class Bots
     |collectd
     |CommaFeed
     |CSS\sCertificate\sSpider
-    |Datadog\sAgent
+    |Datadog\sAgent|Datadog/?Synthetics
     |Datanyze
     |Dataprovider
     |Daum(oa)?[\s/][0-9]
@@ -118,6 +118,7 @@ final class Bots
     |Mail\.RU
     |magpie-crawler
     |MagpieRSS
+    |masscan-ng/([\d+.]+)
     |masscan
     |Mastodon/
     |meanpathbot
@@ -276,7 +277,7 @@ final class Bots
     |AdMantX.*admantx\.com
     |Server\sDensity\sService\sMonitoring.*
     |RSSRadio\s\(Push\sNotification\sScanner;support@dorada\.co\.uk\)
-    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,\sworld)
+    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,\sworld|wp_is_mobile|0xAbyssalDoesntExist)
     |^sentry
     |^Spotify
     |The\sKnowledge\sAI
@@ -395,6 +396,19 @@ final class Bots
     |um-LN/([\d+.]+)
     |Abonti/([\d+.]+)
     |collection@infegy.com
+    |HTTP\sBanner\sDetection\s\(https://security.ipip.net\)
+    |ev-crawler/([\d+.]+)
+    |webprosbot/([\d+.]+)
+    |ELB-HealthChecker
+    |Wheregoes.com\sRedirect\sChecker/([\d+.]+)
+    |project_patchwatch
+    |InternetMeasurement/([\d+.]+)
+    |DomainAppender\s/([\d+.]+)
+    |FreeWebMonitoring\sSiteChecker/([\d+.]+)
+    |Page\sModified\sPinger
+    |adstxtlab.com
+    |Iframely/([\d+.]+)
+    |DomainStatsBot/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
