@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "infection/infection": "^0.26.1",
-        "matomo/device-detector": "^5.0",
+        "matomo/device-detector": "^5.0 || ^6.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "nette/php-generator": "^3.6",
         "phpbench/phpbench": "^1.2",
