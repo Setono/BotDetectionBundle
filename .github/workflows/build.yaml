@@ -67,9 +67,7 @@ jobs:
                     - "^6.0"
 
                 exclude:
-                    -   php-version: "8.0"
-                        symfony: "^6.0"
-                    -   php-version: "8.1"
+                    -   php-version: "7.4"
                         symfony: "^6.0"
 
         steps:
@@ -118,9 +116,7 @@ jobs:
                     - "^6.0"
 
                 exclude:
-                    -   php-version: "8.0"
-                        symfony: "^6.0"
-                    -   php-version: "8.1"
+                    -   php-version: "7.4"
                         symfony: "^6.0"
 
         steps:
@@ -167,9 +163,7 @@ jobs:
                     - "^6.0"
 
                 exclude:
-                    -   php-version: "8.0"
-                        symfony: "^6.0"
-                    -   php-version: "8.1"
+                    -   php-version: "7.4"
                         symfony: "^6.0"
 
         steps:
