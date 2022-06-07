@@ -139,7 +139,7 @@ jobs:
                     dependency-versions: "${{ matrix.dependencies }}"
 
             -   name: "Static analysis"
-                run: "composer analyse"
+                run: "vendor/bin/psalm --php-version=${{ matrix.php-version }}"
 
     unit-tests:
         name: "Unit tests"
