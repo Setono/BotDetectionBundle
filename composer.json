@@ -43,6 +43,11 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "dealerdirect/phpcodesniffer-composer-installer": false,
+            "infection/extension-installer": true
+        },
         "sort-packages": true
     },
     "extra": {
