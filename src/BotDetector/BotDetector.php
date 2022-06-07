@@ -4,21 +4,24 @@ declare(strict_types=1);
 
 namespace Setono\BotDetectionBundle\BotDetector;
 
+use Setono\MainRequestTrait\MainRequestTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 final class BotDetector implements BotDetectorInterface
 {
+    use MainRequestTrait;
+
     /** @var array<string, bool> */
     private array $cache = [];
 
     private RequestStack $requestStack;
 
-    /** @var array<array-key, string> */
+    /** @var list<string> */
     private array $popular;
 
     /**
-     * @param array<array-key, string>|null $popular
+     * @param list<string>|null $popular
      */
     public function __construct(RequestStack $requestStack, array $popular = null)
     {
@@ -54,7 +57,7 @@ final class BotDetector implements BotDetectorInterface
     public function isBotRequest(Request $request = null): bool
     {
         if (null === $request) {
-            $request = $this->requestStack->getMasterRequest();
+            $request = $this->getMainRequestFromRequestStack($this->requestStack);
             if (null === $request) {
                 return false;
             }
