@@ -25,11 +25,39 @@ final class SetonoBotDetectionExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
 
+        // bot detector
         $this->assertContainerBuilderHasService(BotDetectorInterface::class);
         $this->assertContainerBuilderHasService('setono_bot_detection.bot_detector.default');
         $this->assertContainerBuilderHasAlias(BotDetectorInterface::class, 'setono_bot_detection.bot_detector.default');
 
+        // config
+        $this->assertContainerBuilderHasService('setono_bot_detection.config.injections');
+
+        // twig
         $this->assertContainerBuilderHasService('setono_bot_detection.twig.extension');
         $this->assertContainerBuilderHasService('setono_bot_detection.twig.runtime');
+    }
+
+    /**
+     * @test
+     */
+    public function it_has_parameters(): void
+    {
+        $this->load();
+
+        // bot detector
+        $this->assertContainerBuilderHasParameter('setono_bot_detection.injections', [
+            'html' => [
+                'data' => false,
+                'class' => false,
+            ],
+            'head' => [
+                'script' => false,
+            ],
+            'body' => [
+                'data' => false,
+                'class' => false,
+            ],
+        ]);
     }
 }

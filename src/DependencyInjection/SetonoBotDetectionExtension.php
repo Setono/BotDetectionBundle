@@ -13,6 +13,14 @@ final class SetonoBotDetectionExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
+        /**
+         * @psalm-suppress PossiblyNullArgument
+         *
+         * @var array{inject: array} $config
+         */
+        $config = $this->processConfiguration($this->getConfiguration([], $container), $configs);
+        $container->setParameter('setono_bot_detection.injections', $config['inject']);
+
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
     }

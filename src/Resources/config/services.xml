@@ -20,6 +20,7 @@
         </parameter>
     </parameters>
     <services>
+        <!-- BotDetector -->
         <service id="Setono\BotDetectionBundle\BotDetector\BotDetectorInterface"
                  alias="setono_bot_detection.bot_detector.default"/>
 
@@ -29,6 +30,14 @@
             <argument>%setono_bot_detection.popular_bots%</argument>
         </service>
 
+        <!-- Config -->
+        <service id="setono_bot_detection.config.injections"
+                 class="Setono\BotDetectionBundle\Config\Injections">
+            <factory class="Setono\BotDetectionBundle\Config\Injections" method="fromArray"/>
+            <argument>%setono_bot_detection.injections%</argument>
+        </service>
+
+        <!-- Twig -->
         <service id="setono_bot_detection.twig.extension"
                  class="Setono\BotDetectionBundle\Twig\Extension">
             <tag name="twig.extension"/>
