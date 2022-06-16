@@ -15,14 +15,16 @@
         "symfony/config": "^4.4 || ^5.4 || ^6.0",
         "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
         "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
-        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0"
+        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+        "twig/twig": "^2.14 || ^3.4"
     },
     "require-dev": {
-        "infection/infection": "^0.26.1",
+        "infection/infection": "^0.26",
         "matomo/device-detector": "^5.0 || ^6.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "nette/php-generator": "^3.6",
         "phpbench/phpbench": "^1.2",
+        "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-phpunit": "^0.16",
         "psalm/plugin-symfony": "^3.1",

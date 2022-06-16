@@ -1,0 +1,12 @@
+--TEST--
+"is_bot_request" function
+--TEMPLATE--
+{% if is_bot_request() %}
+bot
+{% else %}
+not bot
+{% endif %}
+--DATA--
+return []
+--EXPECT--
+bot

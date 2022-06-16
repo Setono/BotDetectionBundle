@@ -18,6 +18,8 @@ to `bundles.php`.
 
 ## Usage
 
+You can use the bot detector in your services:
+
 ```php
 <?php
 
@@ -43,6 +45,13 @@ final class YourService
 }
 ```
 
+and you can use it inside your twig templates:
+
+```twig
+{% if is_bot_request() %}
+    I knew you where a bot!
+{% endif %}
+```
 [ico-version]: https://poser.pugx.org/setono/bot-detection-bundle/v/stable
 [ico-unstable-version]: https://poser.pugx.org/setono/bot-detection-bundle/v/unstable
 [ico-license]: https://poser.pugx.org/setono/bot-detection-bundle/license

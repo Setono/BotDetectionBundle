@@ -28,5 +28,17 @@
             <argument type="service" id="request_stack"/>
             <argument>%setono_bot_detection.popular_bots%</argument>
         </service>
+
+        <service id="setono_bot_detection.twig.extension"
+                 class="Setono\BotDetectionBundle\Twig\Extension">
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="setono_bot_detection.twig.runtime"
+                 class="Setono\BotDetectionBundle\Twig\Runtime">
+            <argument type="service" id="setono_bot_detection.bot_detector.default"/>
+
+            <tag name="twig.runtime"/>
+        </service>
     </services>
 </container>
