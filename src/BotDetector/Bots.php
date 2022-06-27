@@ -112,6 +112,7 @@ final class Bots
     |kouio
     |larbin
     |([A-z0-9]*)-Lighthouse
+    |last-modified\.com
     |linkdexbot|linkdex\.com
     |LinkedInBot
     |ltx71
@@ -311,7 +312,7 @@ final class Bots
     |Domains\sProject
     |PetalBot
     |SerendeputyBot
-    |ias-va.*admantx.*service-fetcher
+    |ias-(?:va|sg).*admantx.*service-fetcher|admantx.com.*service-fetcher
     |SemanticScholarBot
     |VelenPublicWebCrawler
     |Barkrowler
@@ -409,6 +410,14 @@ final class Bots
     |adstxtlab.com
     |Iframely/([\d+.]+)
     |DomainStatsBot/([\d+.]+)
+    |aiHitBot/([\d+.]+)
+    |DomainCrawler/
+    |DNSResearchBot
+    |GitCrawlerBot
+    |AdAuth/([\d+.]+)
+    |faveeo.com
+    |kozmonavt\.
+    |CriteoBot/
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
