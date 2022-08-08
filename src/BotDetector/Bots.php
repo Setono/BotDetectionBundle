@@ -428,6 +428,11 @@ final class Bots
     |ZaldamoSearchBot
     |AFB/([\d+.]+)
     |SeolytBot/([\d+.]+)
+    |LinkWalker/([\d+.]+)
+    |RenovateBot/([\d+.]+)
+    |INETDEX-BOT/([\d+.]+)
+    |NETZZAPPEN
+    |SerpReputationManagementAgent/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
