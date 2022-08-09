@@ -6,6 +6,10 @@
 [![Code Coverage][ico-code-coverage]][link-code-coverage]
 [![Mutation testing][ico-infection]][link-infection]
 
+Detect if the user agent is a bot and act upon it. Under the hood this bundle uses the [matomo-org/device-detector](https://github.com/matomo-org/device-detector),
+but instead of just using that library this library has a very small subset of user agents that it checks first (i.e. major search engine).
+This makes it much faster in detecting those very common bots and hence speeds up your request cycle.
+
 ## Installation
 
 ```shell
