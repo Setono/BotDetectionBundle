@@ -7,8 +7,7 @@ updates:
           include: "scope"
           prefix: "composer"
       directory: "/"
-      open-pull-requests-limit: 1
       package-ecosystem: "composer"
       schedule:
           interval: "weekly"
-      versioning-strategy: "widen"
+      versioning-strategy: "increase-if-necessary"
