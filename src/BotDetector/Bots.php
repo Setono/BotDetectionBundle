@@ -10,7 +10,8 @@ namespace Setono\BotDetectionBundle\BotDetector;
 
 final class Bots
 {
-    public const REGEX = "#360Spider
+    public const REGEX = "#monitoring360bot
+    |360Spider
     |Aboundex
     |AcoonBot
     |AddThis\.com
@@ -99,7 +100,7 @@ final class Bots
     |Seznam-Zbozi-robot
     |Heurekabot-Feed
     |ShopAlike
-    |AdsBot-Google|Adwords-(DisplayAds|Express|Instant)|Google\sWeb\sPreview|Google[\s-]Publisher[\s-]Plugin|Google-(Ads-Conversions|Ads-Qualify|Adwords|AMPHTML|Assess|HotelAdsVerifier|Read-Aloud|Shopping-Quality|Site-Verification|speakr|Stale-Content-Probe|Test|Youtube-Links)|(APIs|DuplexWeb|Feedfetcher|Mediapartners)-Google|Googlebot|Google(?:AssociationService|Producer)|Google.*/\+/web/snippet
+    |AdsBot-Google|Adwords-(DisplayAds|Express|Instant)|Google\sWeb\sPreview|Google[\s-]Publisher[\s-]Plugin|Google-(Ads-Conversions|Ads-Qualify|Adwords|AMPHTML|Assess|HotelAdsVerifier|Read-Aloud|Shopping-Quality|Site-Verification|speakr|Stale-Content-Probe|Test|Youtube-Links)|(APIs|DuplexWeb|Feedfetcher|Mediapartners)-Google|Googlebot|Google(?:AdSenseInfeed|AssociationService|Producer)|Google.*/\+/web/snippet
     |heritrix
     |HubSpot\s
     |HTTPMon
@@ -150,7 +151,7 @@ final class Bots
     |PaperLiBot
     |phantomas/
     |phpservermon
-    |PocketParser
+    |Pocket(?:ImageCache|Parser)/([\d+.]+)
     |PritTorrent
     |PRTG\sNetwork\sMonitor
     |psbot
@@ -185,7 +186,7 @@ final class Bots
     |SiteSucker
     |sixy.ch
     |Slackbot|Slack-ImgProxy
-    |(Sogou\s(web|inst|Pic)\sspider)|New-Sogou-Spider
+    |(Sogou[\s-](head|inst|Orion|Pic|Test|web)[\s-]spider)|New-Sogou-Spider
     |Sosospider|Sosoimagespider
     |Sprinklr
     |sqlmap/
@@ -278,7 +279,7 @@ final class Bots
     |AdMantX.*admantx\.com
     |Server\sDensity\sService\sMonitoring.*
     |RSSRadio\s\(Push\sNotification\sScanner;support@dorada\.co\.uk\)
-    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal(?!ot)|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|daumoa,damoa,daum,daumos,duamoa,duam,duamos)
+    |(A6-Indexer|nuhk|TsolCrawler|Yammybot|Openbot|Gulper\sWeb\sBot|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr.com|tweetedtimes.com|TrendsmapResolver|teoma|blitzbot|oegp|furlbot|http%20client|polybot|htdig|mogimogi|larbin|scrubby|searchsight|seekbot|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus))|zeal(?!ot)|fast-webcrawler|converacrawler|dataparksearch|findlinks|BrowserMob|HttpMonitor|ThumbShotsBot|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|RackspaceBot|robots|SeopultContentAnalyzer|7Siters|centuryb.o.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|My\sUser\sAgent|cortex|CF-UC\sUser\sAgent|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,?\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|daumoa,damoa,daum,daumos,duamoa,duam,duamos|^revolt|nvd0rz|xfa1|Hakai|gbrmss|fuck-your-hp|IDBTE4M\sCODE87|Antoine|Insomania|Hells-Net|b3astmode|Linux\sGnu\s\(cow\)|custom_user_agent|Test\sCertificate\sInfo|iplabel)
     |^sentry
     |^Spotify/(\d+[\.\d]+)$
     |The\sKnowledge\sAI
@@ -434,6 +435,34 @@ final class Bots
     |NETZZAPPEN
     |SerpReputationManagementAgent/([\d+.]+)
     |panscient.com
+    |research@pdrlabs.net
+    |Nicecrawler/([\d+.]+)
+    |t3versionsBot/([\d+.]+)
+    |Crawlson/([\d+.]+)
+    |tchelebi/([\d+.]+)
+    |JobboerseBot
+    |^Lkx-(.*)/([\d+.]+)
+    |RepoLookoutBot/([\d+.]+)
+    |PATHspider
+    |everyfeed-spider/([\d+.]+)
+    |Exchange\scheck
+    |Sublinq
+    |Gregarius/([\d+.]+)
+    |COMODO\sDCV
+    |Sectigo\sDCV
+    |KlarnaBot-(?:DownloadProductImage|EnrichProducts|PriceWatcher)/([\d+.]+)
+    |Taboolabot/([\d+.]+)
+    |Asana/([\d+.]+)
+    |Chrome\sPrivacy\sPreserving\sPrefetch\sProxy
+    |URLinspectorBot/([\d+.]+)
+    |EntferBot/([\d+.]+)
+    |TagInspector/([\d+.]+)
+    |pageburst
+    |.+diffbot
+    |DisqusAdstxtCrawler/([\d+.]+)
+    |startmebot/([\d+.]+)
+    |2ip\sbot/([\d+.]+)
+    |ReqBin\sCurl\sClient/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
