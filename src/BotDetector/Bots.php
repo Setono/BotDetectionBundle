@@ -144,6 +144,7 @@ final class Bots
     |Nmap\sScripting\sEngine
     |Nuzzel
     |Octopus\s[0-9]
+    |OnlineOrNot.com_bot
     |omgili
     |OpenindexSpider
     |spbot
@@ -305,6 +306,7 @@ final class Bots
     |SMTBot
     |LCC
     |Startpagina-Linkchecker
+    |MoodleBot-Linkchecker
     |GTmetrix
     |Nutch
     |Seobility
@@ -344,6 +346,7 @@ final class Bots
     |scaninfo@(?:expanseinc|paloaltonetworks).com
     |HuaweiWebCatBot
     |Hatena-Favicon
+    |Hatena-?Bookmark
     |RyowlEngine/(\d+)
     |OdklBot/(\d+)
     |Mediatoolkitbot
@@ -474,6 +477,10 @@ final class Bots
     |FemtosearchBot/([\d+.]+)
     |AdsTxtCrawler/([\d+.]+)
     |Morningscore
+    |Uptime-Kuma/([\d+.]+)
+    |ChatGPT-User
+    |BrightEdge\sCrawler/([\d+.]+)
+    |sfFeedReader/([\d+.]+)
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
