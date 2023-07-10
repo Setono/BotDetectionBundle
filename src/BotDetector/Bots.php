@@ -104,6 +104,7 @@ final class Bots
     |AdsBot-Google|Adwords-(DisplayAds|Express|Instant)|Google\sWeb\sPreview|Google[\s-]Publisher[\s-]Plugin|Google-(Ads-Conversions|Ads-Qualify|Adwords|AMPHTML|Assess|HotelAdsVerifier|Read-Aloud|Shopping-Quality|Site-Verification|speakr|Stale-Content-Probe|Test|Youtube-Links)|(APIs|DuplexWeb|Feedfetcher|Mediapartners)-Google|Googlebot|Google(?:AdSenseInfeed|AssociationService|Prober|Producer)|Google.*/\+/web/snippet
     |heritrix
     |HubSpot\s
+    |vuhuvBot
     |HTTPMon
     |ICC-Crawler
     |inoreader.com
@@ -372,6 +373,7 @@ final class Bots
     |colly
     |l9tcpid/v([\d+\.])
     |l9explore/([\d+\.])
+    |l9scan/|^Lkx-(.*)/([\d+.]+)
     |MegaIndex.ru/([\d+\.])
     |Seekport
     |seolyt/([\d+\.])
@@ -445,7 +447,6 @@ final class Bots
     |Crawlson/([\d+.]+)
     |tchelebi/([\d+.]+)
     |JobboerseBot
-    |^Lkx-(.*)/([\d+.]+)
     |RepoLookoutBot/([\d+.]+)
     |PATHspider
     |everyfeed-spider/([\d+.]+)
@@ -481,6 +482,7 @@ final class Bots
     |ChatGPT-User
     |BrightEdge\sCrawler/([\d+.]+)
     |sfFeedReader/([\d+.]+)
+    |cyberscan.io
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
