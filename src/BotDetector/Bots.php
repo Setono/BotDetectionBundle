@@ -291,7 +291,8 @@ final class Bots
     |Kaspersky\sLab\sCFR\slink\sresolver
     |eZ\sPublish\sLink\sValidator
     |woorankreview
-    |(Match|LinkCheck)\sby\sSiteimprove.com
+    |by\sSiteimprove\.com
+    |Image\ssize\sby\sSiteimprove\.com
     |CATExplorador
     |Buck
     |tracemyfile
@@ -483,6 +484,8 @@ final class Bots
     |BrightEdge\sCrawler/([\d+.]+)
     |sfFeedReader/([\d+.]+)
     |cyberscan.io
+    |deepcrawl\.com
+    |RepoLookoutBot
     |[a-z0-9\-_]*((?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|crawler|crawl|checker|archiver|transcoder|spider)([^a-z]|$)
     #x";
 }
