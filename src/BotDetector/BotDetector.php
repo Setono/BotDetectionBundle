@@ -10,12 +10,8 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 final class BotDetector implements BotDetectorInterface
 {
-    use MainRequestTrait;
-
     /** @var array<string, bool> */
     private array $cache = [];
-
-    private RequestStack $requestStack;
 
     /** @var list<string> */
     private array $popular;
@@ -23,7 +19,7 @@ final class BotDetector implements BotDetectorInterface
     /**
      * @param list<string>|null $popular
      */
-    public function __construct(RequestStack $requestStack, array $popular = null)
+    public function __construct(private RequestStack $requestStack, array $popular = null)
     {
         $this->requestStack = $requestStack;
         if (null === $popular) {
@@ -56,13 +52,11 @@ final class BotDetector implements BotDetectorInterface
 
     public function isBotRequest(Request $request = null): bool
     {
-        if (null === $request) {
-            $request = $this->getMainRequestFromRequestStack($this->requestStack);
-            if (null === $request) {
-                return false;
-            }
+        $request = $request ?? $this->requestStack->getCurrentRequest();
+        if (empty($request)) {
+            return false;
         }
-
+        assert($request instanceof Request);
         $userAgent = $request->headers->get('user-agent');
         if (null === $userAgent) {
             return false;

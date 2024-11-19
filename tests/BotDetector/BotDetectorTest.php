@@ -41,6 +41,7 @@ final class BotDetectorTest extends TestCase
     {
         $requestStack = new RequestStack();
         $requestStack->push(new Request());
+        assert($requestStack->getCurrentRequest());
         $botDetector = new BotDetector($requestStack);
 
         self::assertFalse($botDetector->isBotRequest());

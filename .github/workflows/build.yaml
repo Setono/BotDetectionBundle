@@ -3,6 +3,7 @@ on:
     push:
         branches:
             - "master"
+            - "tac"
     pull_request: ~
     workflow_dispatch: ~
 
@@ -15,7 +16,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
+                    - "8.1"
 
                 dependencies:
                     - "highest"
@@ -53,8 +54,6 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
-                    - "8.0"
                     - "8.1"
 
                 dependencies:
@@ -62,13 +61,8 @@ jobs:
                     - "highest"
 
                 symfony:
-                    - "^4.4"
-                    - "^5.4"
-                    - "^6.0"
-
-                exclude:
-                    -   php-version: "7.4"
-                        symfony: "^6.0"
+                    - "^6.4"
+                    - "^7.1"
 
         steps:
             -   name: "Checkout"
@@ -113,11 +107,11 @@ jobs:
                 symfony:
                     - "^4.4"
                     - "^5.4"
-                    - "^6.0"
+                    - "^6.4 || ^7.1"
 
                 exclude:
                     -   php-version: "7.4"
-                        symfony: "^6.0"
+                        symfony: "^6.4 || ^7.1"
 
         steps:
             -   name: "Checkout"
@@ -160,11 +154,11 @@ jobs:
                 symfony:
                     - "^4.4"
                     - "^5.4"
-                    - "^6.0"
+                    - "^6.4 || ^7.1"
 
                 exclude:
                     -   php-version: "7.4"
-                        symfony: "^6.0"
+                        symfony: "^6.4 || ^7.1"
 
         steps:
             -   name: "Checkout"
