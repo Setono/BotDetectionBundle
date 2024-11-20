@@ -53,7 +53,7 @@ final class BotDetector implements BotDetectorInterface
     public function isBotRequest(Request $request = null): bool
     {
         $request = $request ?? $this->requestStack->getCurrentRequest();
-        if (empty($request)) {
+        if (null === $request) {
             return false;
         }
         assert($request instanceof Request);
