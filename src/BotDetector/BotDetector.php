@@ -19,7 +19,7 @@ final class BotDetector implements BotDetectorInterface
     /**
      * @param list<string>|null $popular
      */
-    public function __construct(private RequestStack $requestStack, array $popular = null)
+    public function __construct(private readonly RequestStack $requestStack, array $popular = null)
     {
         $this->requestStack = $requestStack;
         if (null === $popular) {
