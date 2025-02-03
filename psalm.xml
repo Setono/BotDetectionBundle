@@ -17,7 +17,6 @@
     </projectFiles>
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
-        <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin"/>
     </plugins>
     <issueHandlers>
         <DeprecatedMethod>
