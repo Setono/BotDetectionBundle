@@ -19,7 +19,7 @@
         "twig/twig": "^2.14 || ^3.4"
     },
     "require-dev": {
-        "infection/infection": "^0.26.21",
+        "infection/infection": "^0.26.6",
         "matomo/device-detector": "^5.0 || ^6.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3 || ^5.1",
         "nette/php-generator": "^3.6",
