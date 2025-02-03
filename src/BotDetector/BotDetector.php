@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace Setono\BotDetectionBundle\BotDetector;
 
-use Setono\MainRequestTrait\MainRequestTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 final class BotDetector implements BotDetectorInterface
 {
-    use MainRequestTrait;
-
     /** @var array<string, bool> */
     private array $cache = [];
 
@@ -56,11 +53,9 @@ final class BotDetector implements BotDetectorInterface
 
     public function isBotRequest(Request $request = null): bool
     {
+        $request = $request ?? $this->requestStack->getMainRequest();
         if (null === $request) {
-            $request = $this->getMainRequestFromRequestStack($this->requestStack);
-            if (null === $request) {
-                return false;
-            }
+            return false;
         }
 
         $userAgent = $request->headers->get('user-agent');

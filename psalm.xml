@@ -4,6 +4,10 @@
     errorLevel="1"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    findUnusedBaselineEntry="false"
+    findUnusedCode="false"
+    findUnusedPsalmSuppress="true"
+    findUnusedVariablesAndParams="false"
     phpVersion="8.1"
 >
     <projectFiles>
