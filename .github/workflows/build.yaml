@@ -72,6 +72,7 @@ jobs:
                     - "~7.2.0"
 
                 exclude:
+                    # PHP 7.4
                     -   php-version: "7.4"
                         symfony: "~6.4.0"
                     -   php-version: "7.4"
@@ -79,6 +80,20 @@ jobs:
                     -   php-version: "7.4"
                         symfony: "~7.1.0"
                     -   php-version: "7.4"
+                        symfony: "~7.2.0"
+                    # PHP 8.0
+                    -   php-version: "8.0"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.2.0"
+                    # PHP 8.1
+                    -   php-version: "8.1"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.1"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.1"
                         symfony: "~7.2.0"
 
         steps:
@@ -130,6 +145,7 @@ jobs:
                     - "~7.2.0"
 
                 exclude:
+                    # PHP 7.4
                     -   php-version: "7.4"
                         symfony: "~6.4.0"
                     -   php-version: "7.4"
@@ -137,6 +153,20 @@ jobs:
                     -   php-version: "7.4"
                         symfony: "~7.1.0"
                     -   php-version: "7.4"
+                        symfony: "~7.2.0"
+                    # PHP 8.0
+                    -   php-version: "8.0"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.2.0"
+                    # PHP 8.1
+                    -   php-version: "8.1"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.1"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.1"
                         symfony: "~7.2.0"
 
         steps:
@@ -188,6 +218,7 @@ jobs:
                     - "~7.2.0"
 
                 exclude:
+                    # PHP 7.4
                     -   php-version: "7.4"
                         symfony: "~6.4.0"
                     -   php-version: "7.4"
@@ -195,6 +226,20 @@ jobs:
                     -   php-version: "7.4"
                         symfony: "~7.1.0"
                     -   php-version: "7.4"
+                        symfony: "~7.2.0"
+                    # PHP 8.0
+                    -   php-version: "8.0"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.0"
+                        symfony: "~7.2.0"
+                    # PHP 8.1
+                    -   php-version: "8.1"
+                        symfony: "~7.0.0"
+                    -   php-version: "8.1"
+                        symfony: "~7.1.0"
+                    -   php-version: "8.1"
                         symfony: "~7.2.0"
 
         steps:
