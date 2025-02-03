@@ -51,8 +51,7 @@
         "sort-packages": true
     },
     "scripts": {
-        "analyse": "psalm --threads=8",
-        "bench": "phpbench run tests/Benchmark --report=default",
+        "analyse": "psalm",
         "check-style": "ecs check",
         "fix-style": "ecs check --fix",
         "phpunit": "phpunit"
