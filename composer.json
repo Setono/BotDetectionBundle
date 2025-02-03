@@ -21,7 +21,7 @@
         "infection/infection": "^0.26.6 || ^0.27.0",
         "matomo/device-detector": "^5.0 || ^6.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3 || ^5.1",
-        "nette/php-generator": "^3.6",
+        "nette/php-generator": "^3.6 || ^4.1",
         "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": "^9.6",
         "psalm/plugin-phpunit": "^0.18",
