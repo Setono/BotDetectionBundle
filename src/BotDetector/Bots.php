@@ -10,7 +10,7 @@ namespace Setono\BotDetectionBundle\BotDetector;
 
 final class Bots
 {
-    public const REGEX = "#WireReaderBot(?:/([\d+.]+))?
+    public const REGEX = "#WireReaderBot
     |monitoring360bot
     |Cloudflare-Healthchecks
     |360Spider
@@ -18,11 +18,11 @@ final class Bots
     |AcoonBot
     |AddThis\.com
     |AhrefsBot
-    |AhrefsSiteAudit/[\d.]+
+    |AhrefsSiteAudit
     |ia_archiver|alexabot|verifybot
     |alexa\ssite\saudit
-    |Amazonbot/[\d.]+
-    |AmazonAdBot/[\d.]+
+    |Amazonbot
+    |AmazonAdBot
     |Amazon[\s-]Route\s?53[\s-]Health[\s-]Check[\s-]Service
     |AmorankSpider
     |ApacheBench
@@ -87,13 +87,13 @@ final class Bots
     |facebook(?:catalog|externalhit|externalua|platform|scraper)
     |meta-externalagent
     |meta-externalfetcher
-    |FacebookBot/[\d.]+
+    |FacebookBot
     |Feedbin
     |FeedBurner
     |Feed\sWrangler
     |Feedly
     |Feedspot
-    |Fever/[0-9]
+    |Fever/
     |FlipboardProxy|FlipboardRSS
     |Findxbot
     |FreshRSS
@@ -130,13 +130,13 @@ final class Bots
     |Google-Area120-PrivacyPolicyFetcher
     |HubSpot\s
     |vuhuv(?:Bot|RBT)
-    |HTTPMon/[\d.]+
+    |HTTPMon
     |ICC-Crawler
     |inoreader\.com
     |iisbot
     |ips-agent
     |IP-Guide\.com
-    |k6/[0-9.]+
+    |k6/
     |kouio
     |larbin
     |[A-z0-9]*-Lighthouse
@@ -147,7 +147,7 @@ final class Bots
     |Mail\.RU
     |magpie-crawler
     |MagpieRSS
-    |masscan-ng/[\d.]+
+    |masscan-ng
     |.*masscan
     |Mastodon/
     |meanpathbot
@@ -170,7 +170,7 @@ final class Bots
     |Nmap\sScripting\sEngine
     |Nuzzel
     |NodePing
-    |Octopus\s[0-9]
+    |Octopus\s[\d.]+
     |OnlineOrNot\.com_bot
     |omgili
     |OpenindexSpider
@@ -180,7 +180,7 @@ final class Bots
     |PaperLiBot
     |phantomas/
     |phpservermon
-    |Pocket(?:ImageCache|Parser)/[\d.]+
+    |Pocket(?:ImageCache|Parser)
     |PritTorrent
     |PRTG\sNetwork\sMonitor
     |psbot
@@ -201,12 +201,11 @@ final class Bots
     |ScreenerBot
     |SemrushBot
     |BacklinksExtendedBot
-    |SerpReputationManagementAgent/[\d.]+
+    |SerpReputationManagementAgent
     |SplitSignalBot
-    |SiteAuditBot/[\d.]+
+    |SiteAuditBot
     |SensikaBot
     |SEOENG(?:World)?Bot
-    |SEOkicks-Robot
     |seoscanners\.net
     |SkypeUriPreview
     |SeznamBot|SklikBot|Seznam\sscreenshot-generator
@@ -225,7 +224,7 @@ final class Bots
     |SSL\sLabs
     |StatusCake
     |Superfeedr\sbot
-    |Sparkler/[0-9]
+    |Sparkler
     |Spinn3r
     |SputnikBot
     |SputnikFaviconBot
@@ -246,7 +245,7 @@ final class Bots
     |Twitterbot
     |UniversalFeedParser
     |via\ssecureurl\.fwdcdn\.com
-    |Uptime(?:bot)?/[\d.]+
+    |Uptime(?:bot)?/
     |UptimeRobot
     |URLAppendBot
     |Vagabondo
@@ -266,7 +265,7 @@ final class Bots
     |WebbCrawler
     |websitepulse[+\s]checker
     |WordPress.+isitwp\.com
-    |Automattic\sAnalytics\sCrawler/[\d.]+
+    |Automattic\sAnalytics\sCrawler
     |WordPress\.com\smShots
     |wp\.com\sfeedbot
     |WordPress
@@ -284,7 +283,7 @@ final class Bots
     |Yandex(?:(?:\.Gazeta\s|Accessibility|Mobile|MobileScreenShot|RenderResources|Screenshot|Sprav)?Bot|(?:AdNet|Antivirus|Blogs|Calendar|Catalog|Direct|Favicons|ForDomain|ImageResizer|Images|Market|Media|Metrika|News|OntoDB(?:API)?|Pagechecker|Partner|RCA|SearchShop|(?:News|Site)links|Tracker|Turbo|Userproxy|Verticals|Vertis|Video|Webmaster))|YaDirectFetcher
     |Yeti|NaverJapan|AdsBot-Naver
     |YoudaoBot
-    |YOURLS\sv[0-9]
+    |YOURLS
     |YRSpider|YYSpider
     |zgrab
     |Zookabot
@@ -293,12 +292,12 @@ final class Bots
     |Yahoo\sAd\smonitoring.*yahoo-ad-monitoring-SLN24857
     |.*Java.*outbrain
     |HubPages.*crawlingpolicy
-    |Pinterest(?:bot)?/[\d.]+.*www\.pinterest\.com
+    |Pinterest(?:bot)?/.*www\.pinterest\.com
     |.*Site24x7
-    |.*\sHLB/[\d.]+
+    |.*\sHLB
     |s~snapchat-proxy
     |Snap\sURL\sPreview\sService
-    |SnapchatAds/[\d.]+
+    |SnapchatAds
     |Let's\sEncrypt\svalidation\sserver
     |GrapeshotCrawler
     |www\.monitor\.us
@@ -331,14 +330,14 @@ final class Bots
     |Kaspersky\sLab\sCFR\slink\sresolver
     |eZ\sPublish\sLink\sValidator
     |woorankreview
-    |by\sSiteimprove\.com
+    |Siteimprove
     |CATExplorador
     |Buck
     |tracemyfile
     |zelist\.ro\sfeed\sparser
     |weborama-fetcher
     |BoardReader\sFavicon\sFetcher
-    |IDG/IT
+    |IDG/(?:EU|IT|RU|UK)
     |Bytespider
     |WikiDo
     |Awario(?:Smart)?Bot
@@ -364,7 +363,7 @@ final class Bots
     |Barkrowler
     |BDCbot
     |adbeat
-    |(?:BuiltWith|BW)/[\d.]+
+    |(?:BuiltWith|BW/)
     |https://whatis\.contentkingapp\.com
     |MicroAdBot
     |PingAdmin\.Ru
@@ -372,9 +371,9 @@ final class Bots
     |WebDataStats
     |parse\.ly\sscraper
     |Nimbostratus-Bot
-    |HeartRails_Capture/[\d.]+
+    |HeartRails_Capture
     |Project-Resonance
-    |DataXu/[\d.]+
+    |DataXu
     |Cocolyzebot
     |veryhip
     |LinkpadBot
@@ -390,82 +389,83 @@ final class Bots
     |HuaweiWebCatBot
     |Hatena-Favicon
     |Hatena-?Bookmark
-    |RyowlEngine/[\d.]+
-    |OdklBot/[\d.]+
+    |RyowlEngine
+    |OdklBot
     |Mediatoolkitbot
     |ZoominfoBot
-    |WeViKaBot/[\d.]+
+    |WeViKaBot
     |SEOkicks
-    |Plukkie/[\d.]+
+    |Plukkie
     |proximic;
-    |SurdotlyBot/[\d.]+
-    |Gowikibot/[\d.]+
-    |SabsimBot/[\d.]+
-    |LumtelBot/[\d.]+
+    |SurdotlyBot
+    |Gowikibot
+    |SabsimBot
+    |LumtelBot
     |PiplBot
-    |woobot/[\d.]+
-    |Cookiebot/[\d.]+
+    |woobot
+    |Cookiebot
     |NetSystemsResearch
-    |CensysInspect/[\d.]+
+    |CensysInspect
     |gdnplus\.com
-    |WellKnownBot/[\d.]+
-    |Adsbot/[\d.]+
-    |MTRobot/[\d.]+
-    |serpstatbot/[\d.]+
+    |WellKnownBot
+    |Adsbot
+    |MTRobot
+    |serpstatbot
     |colly
-    |l9tcpid/v[\d.]+
-    |l9explore/[\d.]+
-    |l9scan/|^Lkx-.*/[\d.]+
-    |MegaIndex\.ru/[\d.]+
+    |l9tcpid
+    |l9explore
+    |l9scan/|^Lkx-.*/
+    |MegaIndex\.ru
     |Seekport
-    |seolyt/[\d.]+
-    |YaK/[\d.]+
-    |KomodiaBot/[\d.]+
-    |KStandBot/[\d.]+
-    |Neevabot/[\d.]+
-    |LinkPreview/[\d.]+
-    |JungleKeyThumbnail/[\d.]+
-    |rocketmonitor(?:\s|bot/)[\d.]+
-    |SitemapParser-VIPnytt/[\d.]+
+    |Seolyt(?:Bot)?
+    |YaK/
+    |KomodiaBot
+    |KStandBot
+    |Neevabot
+    |Chatwork\sLinkPreview
+    |LinkPreview
+    |JungleKeyThumbnail
+    |rocketmonitor(?:bot)?
+    |SitemapParser-VIPnytt
     |^Turnitin
-    |DMBrowser/[\d.]+|DMBrowser-[UB]V
+    |DMBrowser|DMBrowser-[UB]V
     |ThinkChaos/
     |DataForSeoBot
-    |Discordbot/[\d.]+
-    |Linespider/[\d.]+
-    |Cincraw/[\d.]+
+    |Discordbot
+    |Linespider
+    |Cincraw
     |CISPA\sWeb\sAnalyzer
     |IonCrawl
     |Crawldad
     |https://securitytxt-scan\.cs\.hm\.edu/
-    |TigerBot/[\d.]+
-    |TestCrawler/[\d.]+
-    |CrowdTanglebot/[\d.]+
+    |TigerBot
+    |TestCrawler
+    |CrowdTanglebot
     |Sellers\.Guide\sCrawler\sby\sPrimis
     |OnalyticaBot
     |deepnoc
-    |Newslitbot/[\d.]+
-    |um-(?:ANS|CC|FC|IC|LN)/[\d.]+
-    |Abonti/[\d.]+
+    |Newslitbot
+    |um-(?:ANS|CC|FC|IC|LN)
+    |Abonti
     |collection@infegy\.com
     |HTTP\sBanner\sDetection\s\(https://security\.ipip\.net\)
-    |ev-crawler/[\d.]+
-    |webprosbot/[\d.]+
+    |ev-crawler
+    |webprosbot
     |ELB-HealthChecker
-    |Wheregoes\.com\sRedirect\sChecker/[\d.]+
+    |Wheregoes\.com\sRedirect\sChecker
     |project_patchwatch
-    |InternetMeasurement/[\d.]+
-    |DomainAppender\s/[\d.]+
-    |FreeWebMonitoring\sSiteChecker/[\d.]+
+    |InternetMeasurement
+    |DomainAppender
+    |FreeWebMonitoring\sSiteChecker
     |Page\sModified\sPinger
     |adstxtlab\.com
-    |Iframely/[\d.]+
-    |DomainStatsBot/[\d.]+
-    |aiHitBot/[\d.]+
+    |Iframely
+    |DomainStatsBot
+    |aiHitBot
     |DomainCrawler/
     |DNSResearchBot
     |GitCrawlerBot
-    |AdAuth/[\d.]+
+    |AdAuth
     |faveeo\.com
     |kozmonavt\.
     |CriteoBot/
@@ -475,68 +475,67 @@ final class Bots
     |dnt-policy@eff\.org
     |InfoTigerBot
     |(?:Birdcrawlerbot|CrawlaDeBot)
-    |ScamadviserExternalHit/[\d.]+
+    |ScamadviserExternalHit
     |ZaldamoSearchBot
-    |AFB/[\d.]+
-    |SeolytBot/[\d.]+
-    |LinkWalker/[\d.]+
-    |RenovateBot/[\d.]+
-    |INETDEX-BOT/[\d.]+
+    |AFB
+    |LinkWalker
+    |RenovateBot
+    |INETDEX-BOT
     |NETZZAPPEN
     |panscient\.com
     |research@pdrlabs\.net
-    |Nicecrawler/[\d.]+
-    |t3versionsBot/[\d.]+
-    |Crawlson/[\d.]+
-    |tchelebi/[\d.]+
+    |Nicecrawler
+    |t3versionsBot
+    |Crawlson
+    |tchelebi
     |JobboerseBot
-    |RepoLookoutBot/v?[\d.]+
+    |RepoLookoutBot
     |PATHspider
-    |everyfeed-spider/[\d.]+
+    |everyfeed-spider
     |Exchange\scheck
     |Sublinq
-    |Gregarius/[\d.]+
+    |Gregarius
     |COMODO\sDCV
     |Sectigo\sDCV|acme\.sectigo\.com
-    |KlarnaBot-(?:DownloadProductImage|EnrichProducts|PriceWatcher)/[\d.]+
-    |Taboolabot/[\d.]+
-    |Asana/[\d.]+
+    |KlarnaBot-(?:DownloadProductImage|EnrichProducts|PriceWatcher)
+    |Taboolabot
+    |Asana
     |Chrome\sPrivacy\sPreserving\sPrefetch\sProxy
-    |URLinspectorBot/[\d.]+
-    |EntferBot/[\d.]+
-    |TagInspector/[\d.]+
+    |URLinspectorBot
+    |EntferBot
+    |TagInspector
     |pageburst
     |.+diffbot
-    |DisqusAdstxtCrawler/[\d.]+
-    |startmebot/[\d.]+
-    |2ip\sbot/[\d.]+
-    |ReqBin\sCurl\sClient/[\d.]+
-    |XoviBot/[\d.]+
-    |Overcast/[\d.]+\sPodcast\sSync
-    |^Verity/[\d.]+
+    |DisqusAdstxtCrawler
+    |startmebot
+    |2ip\sbot
+    |ReqBin\sCurl\sClient
+    |XoviBot
+    |Overcast/.+Podcast\sSync
+    |^Verity
     |hackermention
-    |BitSightBot/[\d.]+
-    |Ezgif/[\d.]+
+    |BitSightBot
+    |Ezgif
     |intelx\.io_bot
-    |FemtosearchBot/[\d.]+
-    |AdsTxtCrawler/[\d.]+
+    |FemtosearchBot
+    |AdsTxtCrawler/
     |Morningscore
-    |Uptime-Kuma/[\d.]+
+    |Uptime-Kuma
     |OAI-SearchBot
-    |GPTBot/[\d.]+
+    |GPTBot
     |ChatGPT-User
-    |BrightEdge\sCrawler/[\d.]+
-    |sfFeedReader/[\d.]+
+    |BrightEdge\sCrawler
+    |sfFeedReader
     |cyberscan\.io
     |researchscan\.comsys\.rwth-aachen\.de
-    |newspaper/[\d.]+
-    |Ant(?:\.com\sbeta|Bot)(?:/([\d+.]+))?
-    |WebwikiBot/[\d.]+
+    |newspaper
+    |Ant(?:\.com\sbeta|Bot)
+    |WebwikiBot
     |phpMyAdmin
-    |Matomo/[\d.]+
-    |Prometheus/[\d.]+
+    |Matomo
+    |Prometheus
     |ArchiveTeam\sArchiveBot
-    |MADBbot/[\d.]+
+    |MADBbot
     |MeltwaterNews
     |owler
     |bbc\.co\.uk/display/men/Page\+Monitor
@@ -544,17 +543,17 @@ final class Bots
     |ClaudeBot
     |Imagesift
     |TactiScout
-    |Brightbot\s([\d+.]+)
-    |DaspeedBot/([\d+.]+)
-    |StractBot(?:/([\d+.]+))?
-    |GeedoBot(?:/([\d+.]+))?
+    |Brightbot
+    |DaspeedBot
+    |StractBot
+    |GeedoBot
     |GeedoProductSearch
-    |BackupLand(?:/([\d+.]+))?
-    |Konturbot(?:/([\d+.]+))?
+    |BackupLand
+    |Konturbot
     |keys-so-bot
-    |LetsearchBot(?:/([\d+.]+))?
-    |Example3(?:/([\d+.]+))?
-    |StatOnlineRuBot(?:/([\d+.]+))?
+    |LetsearchBot
+    |Example3
+    |StatOnlineRuBot
     |Spawning-AI
     |domain\sresearch\sproject
     |getodin\.com
@@ -566,67 +565,66 @@ final class Bots
     |^pdrl\.fm
     |PodUptime/
     |anthropic-ai
-    |NetpeakCheckerBot/[\d.]+
-    |SandobaCrawler/[\d.]+
+    |NetpeakCheckerBot
+    |SandobaCrawler
     |SirdataBot
-    |CheckMarkNetwork/[\d.]+
+    |CheckMarkNetwork
     |cohere-ai
-    |PerplexityBot/[\d.]+
+    |PerplexityBot
     |TTD-Content
     |montastic-monitor
-    |Ruby,\sTwurly\sv[\d.]+
-    |Mixnode(?:(?:Cache)?/[\d.]+)?
-    |CSSCheck/[\d.]+
-    |MicrosoftPreview/[\d.]+
+    |Ruby,\sTwurly\sv
+    |Mixnode(?:Cache)?
+    |CSSCheck
+    |MicrosoftPreview
     |s~virustotalcloud
-    |TinEye/[\d.]+
+    |TinEye
     |e~arsnova-filter-system
     |botify
     |adscanner
-    |online-webceo-bot/[\d.]+
+    |online-webceo-bot
     |NetTrack
     |htmlyse
-    |TrendsmapResolver/[\d.]+
-    |Shareaholic(?:bot)?/[\d.]+
+    |TrendsmapResolver
+    |Shareaholic(?:bot)?
     |keycdn-tools:
     |keycdn-tools/
     |Arquivo-web-crawler
     |WhatsMyIP\.org
-    |SenutoBot/[\d.]+
-    |spaziodati
+    |SenutoBot
     |GozleBot
-    |Quantcastbot/[\d.]+
+    |Quantcastbot
     |FontRadar
     |ViberUrlDownloader
     |^Zeno$
     |Barracuda\sSentinel
-    |RuxitSynthetic/[\d.]+
-    |DynatraceSynthetic/[\d.]+
+    |RuxitSynthetic
+    |DynatraceSynthetic
     |sitebulb
-    |Monsidobot/[\d.]+
+    |Monsidobot
     |AccompanyBot
     |Ghost\sInspector
     |Google-Apps-Script
-    |SiteOne-Crawler/[\d.]+
+    |SiteOne-Crawler
     |Detectify
     |DomCopBot
-    |Paqlebot/[\d.]+
+    |Paqlebot
     |Wibybot
     |Synapse
-    |OSZKbot/[\d.]+
+    |OSZKbot
     |ZoomBot
-    |RavenCrawler/[\d.]+
+    |RavenCrawler
     |KadoBot
-    |Dubbotbot/[\d.]+
-    |Swiftbot/[\d.]+
+    |Dubbotbot
+    |Swiftbot
     |EyeMonIT
     |ThousandEyes
-    |OmtrBot/[\d.]+
-    |WebMon/[\d.]+
-    |AdsTxtCrawlerTP/[\d.]+
+    |OmtrBot
+    |WebMon
+    |AdsTxtCrawlerTP
     |fragFINN
     |Clickagy
-    |kiwitcms-gitops/[\d.]+
+    |kiwitcms-gitops
     |webtru_crawler
     |URLSuMaBot
     |360JK\syunjiankong
@@ -634,29 +632,29 @@ final class Bots
     |Plesk\sscreenshot\sbot
     |Who\.is
     |Probely
-    |Uptimia(?:/[\d.]+)?
-    |2GDPR/[\d.]+
+    |Uptimia
+    |2GDPR
     |abuse\.xmco\.fr
     |CheckHost
-    |LAC_IAHarvester/[\d.]+
-    |InsytfulBot/[\d.]+
+    |LAC_IAHarvester
+    |InsytfulBot
     |statista\.com
-    |SubstackContentFetch/[\d.]+
+    |SubstackContentFetch
     |^ds9
     |LiveJournal\.com
     |bitdiscovery
-    |Castopod/[\d.]+
+    |Castopod
     |Elastic/Synthetics
-    |WDG_Validator/[\d.]+
+    |WDG_Validator
     |scan@aegis.network
-    |CrawlyProjectCrawler/[\d.]+
+    |CrawlyProjectCrawler
     |BDFetch
     |PunkMap
-    |GenomeCrawlerd/[\d.]+
-    |Gaisbot/[\d.]+
-    |FAST-WebCrawler/[\d.]+
+    |GenomeCrawlerd
+    |Gaisbot
+    |FAST-WebCrawler
     |ducks\.party
-    |DepSpid/[\d.]+
+    |DepSpid
     |Website-info\.net
     |RedekenBot
     |semaltbot
@@ -671,7 +669,7 @@ final class Bots
     |Bloglines
     |heritrix
     |search\.marginalia\.nu
-    |vu-server-health-scanner/[\d.]+
+    |vu-server-health-scanner
     |Functionize
     |Prerender
     |bl\.uk_ldfc_bot
@@ -695,7 +693,16 @@ final class Bots
     |cms-experiment
     |SiteCheckerBotCrawler
     |SBIder
-    |nuhk|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr\.com|teoma|oegp|http%20client|htdig|mogimogi|larbin|scrubby|searchsight|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus|\sCM62|\sHD65))|zeal(?!ot)|dataparksearch|findlinks|BrowserMob|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|7Siters|centuryb\.o\.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|cortex|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,?\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|^revolt|nvd0rz|xfa1|Hakai|gbrmss|fuck-your-hp|IDBTE4M\sCODE87|Antoine|Insomania|Hells-Net|b3astmode|Linux\sGnu\s\(cow\)|Test\sCertificate\sInfo|iplabel|Magellan|TheSafex?Internetx?Search|Searcherx?web|kirkland-signature|LinkChain|survey-security-dot-txt|infrawatch|Time/|r00ts3c-owned-you|nvdorz|Root\sSlut|NiggaBalls|BotPoke|GlobalWebSearch|xx032_bo9vs83_2a|sslshed|geckotrail|Wordup|Keydrop|^xenu|^(?:chrome|firefox|Abcd|Dark|KvshClient|Node.js|Report\sRunner|url|Zeus|ZmEu)$
+    |LightspeedSystemsCrawler
+    |Research\sJLU
+    |(?:hgf|OS)AlphaXCrawl
+    |WPMU\sDEV
+    |SnoopSecInspect
+    |ModatScanner
+    |researchcyber\.net
+    |CrystalSemanticsBot
+    |najdu\.s\.holubem\.eu
+    |nuhk|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr\.com|teoma|oegp|http%20client|htdig|mogimogi|larbin|scrubby|searchsight|semanticdiscovery|snappy|vortex(?!(?:\sBuild|Plus|\sCM62|\sHD65))|zeal(?!ot)|dataparksearch|findlinks|BrowserMob|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|7Siters|centuryb\.o\.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|cortex|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,?\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|^revolt|nvd0rz|xfa1|Hakai|gbrmss|fuck-your-hp|IDBTE4M\sCODE87|Antoine|Insomania|Hells-Net|b3astmode|Linux\sGnu\s\(cow\)|Test\sCertificate\sInfo|iplabel|Magellan|TheSafex?Internetx?Search|Searcherx?web|kirkland-signature|LinkChain|survey-security-dot-txt|infrawatch|Time/|r00ts3c-owned-you|nvdorz|Root\sSlut|NiggaBalls|BotPoke|GlobalWebSearch|xx032_bo9vs83_2a|sslshed|geckotrail|Wordup|Keydrop|\(compatible\)|John\sRecon|SPARK\sCOMMIT|masjesu|Komaru_The_Cat|Jesus\sChrist\sof\sNazareth\sis\sLORD|Kowai|Hakai|LoliSec|LMAO|^xenu|^(?:chrome|firefox|Abcd|Dark|KvshClient|Node.js|Report\sRunner|url|Zeus|ZmEu)$
     |[a-z0-9_-]*(?:(?<!cu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|analyzer|appengine|archiver?|checker|collector|crawl|crawler|(?<!node-|uclient-|Mikrotik/\d\.[x\d]\s|electron-)fetch(?:er)?|indexer|inspector|monitor|(?<!Microsoft\s|banshee-)project(?!or)|(?<!Google\sWap\s|Blue\s|SpeedMode;\s)proxy|(?<!P)research|resolver|robots|(?<!Cam)scanner|scraper|script|searcher|(?<!-)security|spider(?!\s8)|study|transcoder|uptime|user[\s_]?agent|validator)(?:[^a-z]|$)
     #x";
 }
