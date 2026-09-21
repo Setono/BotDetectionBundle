@@ -47,6 +47,15 @@ final class BotDetectorTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function it_matches_popular_bots_case_insensitively(): void
+    {
+        $botDetector = new BotDetector(new RequestStack(), ['Qwertz']);
+        self::assertTrue($botDetector->isBot('Mozilla/5.0 (compatible; qwertz/1.0)'));
+    }
+
+    /**
      * @dataProvider getBots
      *
      * @test

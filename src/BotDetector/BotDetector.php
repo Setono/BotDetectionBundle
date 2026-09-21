@@ -26,14 +26,25 @@ final class BotDetector implements BotDetectorInterface
         if (null === $popular) {
             $popular = [
                 'Googlebot',
-                'Bingbot',
-                'Yahoo! Slurp',
-                'DuckDuckBot',
-                'Baiduspider',
+                'meta-externalagent',
+                'GPTBot',
+                'ClaudeBot',
+                'bingbot',
+                'Amazonbot',
+                'GoogleOther',
                 'YandexBot',
+                'Bytespider',
+                'AhrefsBot',
+                'Applebot',
+                'SemrushBot',
+                'ChatGPT-User',
+                'OAI-SearchBot',
+                'PerplexityBot',
+                'meta-webindexer',
                 'facebookexternalhit',
-                'facebookcatalog',
-                'ia_archiver',
+                'Baiduspider',
+                'PetalBot',
+                'DuckDuckBot',
             ];
         }
 
@@ -43,7 +54,7 @@ final class BotDetector implements BotDetectorInterface
     public function isBot(string $userAgent): bool
     {
         if (!isset($this->cache[$userAgent])) {
-            $minimalRegex = '#' . implode('|', $this->popular) . '#';
+            $minimalRegex = '#' . implode('|', $this->popular) . '#i';
             $minimalMatch = preg_match($minimalRegex, $userAgent) === 1;
             $this->cache[$userAgent] = $minimalMatch || preg_match(Bots::REGEX, $userAgent) === 1;
         }

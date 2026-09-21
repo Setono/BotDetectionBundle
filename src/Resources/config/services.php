@@ -12,18 +12,29 @@ use Setono\BotDetectionBundle\Twig\Runtime;
 return static function (ContainerConfigurator $container): void {
     /**
      * Use this collection to add popular bots to the bot detector. This will speed up detection when the bot is one of these.
-     * These are regexes that should match the user agent of the respective bot.
+     * These are regexes that should match the user agent of the respective bot. They are matched case-insensitively.
      */
     $container->parameters()->set('setono_bot_detection.popular_bots', [
         'Googlebot',
-        'Bingbot',
-        'Yahoo! Slurp',
-        'DuckDuckBot',
-        'Baiduspider',
+        'meta-externalagent',
+        'GPTBot',
+        'ClaudeBot',
+        'bingbot',
+        'Amazonbot',
+        'GoogleOther',
         'YandexBot',
+        'Bytespider',
+        'AhrefsBot',
+        'Applebot',
+        'SemrushBot',
+        'ChatGPT-User',
+        'OAI-SearchBot',
+        'PerplexityBot',
+        'meta-webindexer',
         'facebookexternalhit',
-        'facebookcatalog',
-        'ia_archiver',
+        'Baiduspider',
+        'PetalBot',
+        'DuckDuckBot',
     ]);
 
     $services = $container->services();
