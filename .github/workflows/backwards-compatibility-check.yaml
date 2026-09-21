@@ -1,0 +1,35 @@
+# See https://github.com/Roave/BackwardCompatibilityCheck
+#
+# Compares the public API of the pull request against its base branch and fails on any breaking
+# change (removed/renamed symbols, narrowed parameter types, new required parameters, ...). This
+# package follows semver: BC breaks belong in the next major only.
+
+name: "Backwards Compatibility Check"
+
+on:
+    pull_request: ~
+
+jobs:
+    backwards-compatibility-check:
+        name: "Backwards Compatibility Check"
+
+        runs-on: "ubuntu-latest"
+
+        steps:
+            -   name: "Checkout"
+                uses: "actions/checkout@v6"
+                with:
+                    fetch-depth: 0
+
+            -   name: "Setup PHP, with composer and extensions"
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    # The current tool releases require PHP >= 8.4; it analyses sources targeting older PHP versions just fine.
+                    php-version: "8.4"
+                    coverage: "none"
+
+            -   name: "Install tool"
+                run: "composer global require roave/backward-compatibility-check"
+
+            -   name: "Check for BC breaks"
+                run: "~/.composer/vendor/bin/roave-backward-compatibility-check --from=origin/${{ github.event.pull_request.base.ref }} --format=github-actions"
