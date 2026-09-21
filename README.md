@@ -6,9 +6,18 @@
 [![Code Coverage][ico-code-coverage]][link-code-coverage]
 [![Mutation testing][ico-infection]][link-infection]
 
-Detect if the user agent is a bot and act upon it. Under the hood this bundle uses the [matomo-org/device-detector](https://github.com/matomo-org/device-detector),
-but instead of just using that library this library has a very small subset of user agents that it checks first (i.e. major search engines).
-This makes it much faster in detecting those very common bots and hence speeds up your request cycle.
+Detect if the user agent is a bot and act upon it. The detection is based on the bot list from
+[matomo-org/device-detector](https://github.com/matomo-org/device-detector), which is compiled into a single regular
+expression and updated weekly.
+
+Before the full bot list is used, the user agent is checked against a short list of the most active crawlers
+(search engines, AI crawlers, SEO tools and social media fetchers). This makes it much faster to detect the most common
+bots and hence speeds up your request cycle.
+
+## Requirements
+
+- PHP 8.1 or higher
+- Symfony 6.4, 7.4 or 8
 
 ## Installation
 
@@ -16,12 +25,22 @@ This makes it much faster in detecting those very common bots and hence speeds u
 composer require setono/bot-detection-bundle
 ```
 
-This installs and enables the plugin automatically if you're using Symfony Flex. If not, add the bundle manually
-to `bundles.php`.
+If you use Symfony Flex, the bundle is enabled automatically. Otherwise, add it to `config/bundles.php`:
+
+```php
+<?php
+
+return [
+    // ...
+    Setono\BotDetectionBundle\SetonoBotDetectionBundle::class => ['all' => true],
+];
+```
 
 ## Usage
 
-You can use the bot detector in your services:
+### In your services
+
+Inject `BotDetectorInterface`:
 
 ```php
 <?php
@@ -30,31 +49,57 @@ use Setono\BotDetectionBundle\BotDetector\BotDetectorInterface;
 
 final class YourService
 {
-    private BotDetectorInterface $botDetector;
-
-    public function __construct(BotDetectorInterface $botDetector)
+    public function __construct(private readonly BotDetectorInterface $botDetector)
     {
-        $this->botDetector = $botDetector;
     }
 
-    public function yourAction(): void
+    public function yourAction(string $userAgent): void
     {
+        // Checks the user agent of the current main request
         if ($this->botDetector->isBotRequest()) {
             // do something to this bot!
         }
 
-        // ...
+        // Checks a user agent string
+        if ($this->botDetector->isBot($userAgent)) {
+            // ...
+        }
     }
 }
 ```
 
-and you can use it inside your twig templates:
+`isBotRequest()` also accepts a `Request` object. It returns `false` if there is no request or the request has no
+`User-Agent` header.
+
+### In Twig templates
 
 ```twig
 {% if is_bot_request() %}
-    I knew you where a bot!
+    I knew you were a bot!
+{% endif %}
+
+{% if is_bot(user_agent) %}
+    This user agent is a bot
 {% endif %}
 ```
+
+## Configuration
+
+The list of the most active crawlers is the `setono_bot_detection.popular_bots` parameter. You can override it in
+`config/services.yaml`, e.g. to put the bots that visit your site the most first:
+
+```yaml
+parameters:
+    setono_bot_detection.popular_bots:
+        - Googlebot
+        - bingbot
+        - MyCustomCrawler
+```
+
+Each entry is a regular expression that is matched case-insensitively against the user agent. A user agent that matches
+an entry is treated as a bot, so keep the entries specific. A user agent that doesn't match any of them is still checked
+against the full bot list.
+
 [ico-version]: https://poser.pugx.org/setono/bot-detection-bundle/v/stable
 [ico-license]: https://poser.pugx.org/setono/bot-detection-bundle/license
 [ico-github-actions]: https://github.com/Setono/BotDetectionBundle/workflows/build/badge.svg
