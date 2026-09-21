@@ -31,7 +31,7 @@ final class ExtensionTest extends IntegrationTestCase
                         return true;
                     }
 
-                    public function isBotRequest(Request $request = null): bool
+                    public function isBotRequest(?Request $request = null): bool
                     {
                         return true;
                     }
@@ -51,8 +51,16 @@ final class ExtensionTest extends IntegrationTestCase
         ];
     }
 
-    protected function getFixturesDir(): string
+    protected static function getFixturesDirectory(): string
     {
         return __DIR__ . '/Fixtures/';
+    }
+
+    /**
+     * Used by twig/twig < 3.13
+     */
+    protected function getFixturesDir(): string
+    {
+        return self::getFixturesDirectory();
     }
 }

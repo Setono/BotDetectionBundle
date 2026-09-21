@@ -17,7 +17,7 @@ final class Runtime implements RuntimeExtensionInterface
         $this->botDetector = $botDetector;
     }
 
-    public function isBotRequest(Request $request = null): bool
+    public function isBotRequest(?Request $request = null): bool
     {
         return $this->botDetector->isBotRequest($request);
     }

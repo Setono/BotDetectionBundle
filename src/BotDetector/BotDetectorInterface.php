@@ -13,5 +13,5 @@ interface BotDetectorInterface
     /**
      * Uses the current main request if $request is null
      */
-    public function isBotRequest(Request $request = null): bool;
+    public function isBotRequest(?Request $request = null): bool;
 }
