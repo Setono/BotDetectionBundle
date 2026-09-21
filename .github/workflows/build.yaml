@@ -15,7 +15,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
+                    - "8.1"
 
                 dependencies:
                     - "highest"
@@ -53,49 +53,32 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
-                    - "8.0"
                     - "8.1"
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
                     - "highest"
 
                 symfony:
-                    - "~5.4.0"
                     - "~6.4.0"
-                    - "~7.0.0"
-                    - "~7.1.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
+                    - "~8.0.0"
 
                 exclude:
-                    # PHP 7.4
-                    -   php-version: "7.4"
-                        symfony: "~6.4.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.0.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.1.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.2.0"
-                    # PHP 8.0
-                    -   php-version: "8.0"
-                        symfony: "~6.4.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.0.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.2.0"
                     # PHP 8.1
                     -   php-version: "8.1"
-                        symfony: "~7.0.0"
+                        symfony: "~7.4.0"
                     -   php-version: "8.1"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.1"
-                        symfony: "~7.2.0"
+                        symfony: "~8.0.0"
+                    # PHP 8.2
+                    -   php-version: "8.2"
+                        symfony: "~8.0.0"
+                    # PHP 8.3
+                    -   php-version: "8.3"
+                        symfony: "~8.0.0"
 
         steps:
             -   name: "Checkout"
@@ -127,49 +110,32 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
-                    - "8.0"
                     - "8.1"
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
                     - "highest"
 
                 symfony:
-                    - "~5.4.0"
                     - "~6.4.0"
-                    - "~7.0.0"
-                    - "~7.1.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
+                    - "~8.0.0"
 
                 exclude:
-                    # PHP 7.4
-                    -   php-version: "7.4"
-                        symfony: "~6.4.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.0.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.1.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.2.0"
-                    # PHP 8.0
-                    -   php-version: "8.0"
-                        symfony: "~6.4.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.0.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.2.0"
                     # PHP 8.1
                     -   php-version: "8.1"
-                        symfony: "~7.0.0"
+                        symfony: "~7.4.0"
                     -   php-version: "8.1"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.1"
-                        symfony: "~7.2.0"
+                        symfony: "~8.0.0"
+                    # PHP 8.2
+                    -   php-version: "8.2"
+                        symfony: "~8.0.0"
+                    # PHP 8.3
+                    -   php-version: "8.3"
+                        symfony: "~8.0.0"
 
         steps:
             -   name: "Checkout"
@@ -191,7 +157,7 @@ jobs:
                     dependency-versions: "${{ matrix.dependencies }}"
 
             -   name: "Static analysis"
-                run: "vendor/bin/psalm --php-version=${{ matrix.php-version }}"
+                run: "vendor/bin/phpstan analyse --no-progress"
 
     unit-tests:
         name: "Unit tests"
@@ -201,49 +167,32 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "7.4"
-                    - "8.0"
                     - "8.1"
                     - "8.2"
                     - "8.3"
+                    - "8.4"
 
                 dependencies:
                     - "lowest"
                     - "highest"
 
                 symfony:
-                    - "~5.4.0"
                     - "~6.4.0"
-                    - "~7.0.0"
-                    - "~7.1.0"
-                    - "~7.2.0"
+                    - "~7.4.0"
+                    - "~8.0.0"
 
                 exclude:
-                    # PHP 7.4
-                    -   php-version: "7.4"
-                        symfony: "~6.4.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.0.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.1.0"
-                    -   php-version: "7.4"
-                        symfony: "~7.2.0"
-                    # PHP 8.0
-                    -   php-version: "8.0"
-                        symfony: "~6.4.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.0.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.0"
-                        symfony: "~7.2.0"
                     # PHP 8.1
                     -   php-version: "8.1"
-                        symfony: "~7.0.0"
+                        symfony: "~7.4.0"
                     -   php-version: "8.1"
-                        symfony: "~7.1.0"
-                    -   php-version: "8.1"
-                        symfony: "~7.2.0"
+                        symfony: "~8.0.0"
+                    # PHP 8.2
+                    -   php-version: "8.2"
+                        symfony: "~8.0.0"
+                    # PHP 8.3
+                    -   php-version: "8.3"
+                        symfony: "~8.0.0"
 
         steps:
             -   name: "Checkout"

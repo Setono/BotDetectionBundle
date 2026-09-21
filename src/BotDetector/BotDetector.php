@@ -20,7 +20,7 @@ final class BotDetector implements BotDetectorInterface
     /**
      * @param list<string>|null $popular
      */
-    public function __construct(RequestStack $requestStack, array $popular = null)
+    public function __construct(RequestStack $requestStack, ?array $popular = null)
     {
         $this->requestStack = $requestStack;
         if (null === $popular) {
@@ -45,13 +45,13 @@ final class BotDetector implements BotDetectorInterface
         if (!isset($this->cache[$userAgent])) {
             $minimalRegex = '#' . implode('|', $this->popular) . '#';
             $minimalMatch = preg_match($minimalRegex, $userAgent) === 1;
-            $this->cache[$userAgent] = $minimalMatch ?: preg_match(Bots::REGEX, $userAgent) === 1;
+            $this->cache[$userAgent] = $minimalMatch || preg_match(Bots::REGEX, $userAgent) === 1;
         }
 
         return $this->cache[$userAgent];
     }
 
-    public function isBotRequest(Request $request = null): bool
+    public function isBotRequest(?Request $request = null): bool
     {
         $request = $request ?? $this->requestStack->getMainRequest();
         if (null === $request) {

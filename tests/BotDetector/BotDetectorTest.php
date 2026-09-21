@@ -48,6 +48,7 @@ final class BotDetectorTest extends TestCase
 
     /**
      * @dataProvider getBots
+     *
      * @test
      */
     public function it_detects_common_bots(string $userAgent): void
@@ -58,6 +59,7 @@ final class BotDetectorTest extends TestCase
 
     /**
      * @dataProvider getHumanUserAgents
+     *
      * @test
      */
     public function it_does_not_detect_common_human_user_agents(string $userAgent): void
@@ -69,8 +71,9 @@ final class BotDetectorTest extends TestCase
     /**
      * @return iterable<array-key, array<array-key, string>>
      */
-    public function getBots(): iterable
+    public static function getBots(): iterable
     {
+        /** @var list<string> $bots */
         $bots = require __DIR__ . '/../data/bots.php';
         foreach ($bots as $bot) {
             yield [$bot];
@@ -80,8 +83,9 @@ final class BotDetectorTest extends TestCase
     /**
      * @return iterable<array-key, array<array-key, string>>
      */
-    public function getHumanUserAgents(): iterable
+    public static function getHumanUserAgents(): iterable
     {
+        /** @var list<string> $humans */
         $humans = require __DIR__ . '/../data/humans.php';
         foreach ($humans as $human) {
             yield [$human];
