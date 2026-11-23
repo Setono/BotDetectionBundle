@@ -14,6 +14,7 @@ final class Bots
     |monitoring360bot
     |Cloudflare-Healthchecks
     |(360Spider(?:-Image|-Video)?)
+    |9bot/
     |Aboundex
     |AcoonBot
     |AddThis\.com
@@ -335,6 +336,7 @@ final class Bots
     |Slurp
     |Speedy\s?Spider
     |nrsbot|NetResearchServer
+    |ScooterZA
     |scooter
     |gigabot
     |charlotte
@@ -849,9 +851,13 @@ final class Bots
     |WRTNBot
     |DomainDrift
     |MyCellar
+    |IsonSearchBot
+    |IsonAI-User
+    |TuneIn-DirMon
+    |EnfiladeBot
     |(ABEvalBot|AdsTxtCrawlerTP|ArtelLeadRadar|DNSResearchBot|Dormouse|FinderGo|FormFinder|GitCrawlerBot|HanaleiBot|HubSeedsBot|ImportDomains|KenyaDomainScorer|LetrixLabs|PhishBucketRust|PostitLeadDiscovery|PrivacyPolicyBot|ProductLookoutBot|Robozilla|Secweb-Sectxt|SeoCherryBot|ShopifyChecker|SitemapCrawler\.de|SleepBot|StudyBot|The\sKnowledge\sAI|Thinkbot|ThinkChaos|TprAdsTxtCrawler|WATCrawler|ProspectorBR)
     |(CheckerProxy|CMSLookup|CSE-Scanner|DomainProbe|FreePBX-Scanner|Goosee-Audit|NetScope-DomainScanner|SecurityScanner|Shodan-Pull|TLM-Audit-Scanner|wp2shell-check)
-    |nuhk|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr\.com|teoma|oegp|http%20client|htdig|mogimogi|larbin|scrubby|searchsight|semanticdiscovery|snappy|zeal(?!ot)|dataparksearch|findlinks|BrowserMob|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|7Siters|centuryb\.o\.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|cortex|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,?\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|^revolt|nvd0rz|xfa1|Hakai|gbrmss|fuck-your-hp|IDBTE4M\sCODE87|Antoine|Insomania|Hells-Net|b3astmode|Linux\sGnu\s\(cow\)|Test\sCertificate\sInfo|iplabel|Magellan|TheSafex?Internetx?Search|Searcherx?web|kirkland-signature|LinkChain|survey-security-dot-txt|infrawatch|Time/|r00ts3c-owned-you|nvdorz|Root\sSlut|NiggaBalls|BotPoke|GlobalWebSearch|xx032_bo9vs83_2a|sslshed|geckotrail|Wordup|Keydrop|\(compatible\)|John\sRecon|SPARK\sCOMMIT|masjesu|Komaru_The_Cat|Jesus\sChrist\sof\sNazareth\sis\sLORD|Kowai|Hakai|LoliSec|LMAO|^xenu|^(?:chrome|desktop|firefox|Abcd|Dark|KvshClient|node|Node\.js|Report\sRunner|url|Zeus|ZmEu)$|OnlyScans|TheInternetSearchx|Laravel\sReaver|bang2013|libredtail|Mozilliqa|Tiberius|honeygain|AW-WB-Filter|SaferSoftwashLeadGen|YourUserAgentHere|phpneuralnetwork|Crusader/|multi-country-domains|platform-fingerprint|greedyhand|DomainExtractor|nsfw-go-placeholder-filter|Intently\.co|KarnoProspectingStudio|recon-(?:crawler|engine)
+    |nuhk|grub-client|Download\sDemon|SearchExpress|Microsoft\sURL\sControl|borg|altavista|dataminr\.com|teoma|oegp|http%20client|htdig|mogimogi|larbin|scrubby|searchsight|semanticdiscovery|snappy|zeal(?!ot)|dataparksearch|findlinks|BrowserMob|URL2PNG|ZooShot|GomezA|Google\sSketchUp|Read%20Later|7Siters|centuryb\.o\.t9|InterNaetBoten|EasyBib\sAutoCite|Bidtellect|tomnomnom/meg|cortex|Re-re\sStudio|adreview|AHC/|NameOfAgent|Request-Promise|ALittle\sClient|Hello,?\sworld|wp_is_mobile|0xAbyssalDoesntExist|Anarchy99|^revolt|nvd0rz|xfa1|Hakai|gbrmss|fuck-your-hp|IDBTE4M\sCODE87|Antoine|Insomania|Hells-Net|b3astmode|Linux\sGnu\s\(cow\)|Test\sCertificate\sInfo|iplabel|Magellan|TheSafex?Internetx?Search|Searcherx?web|kirkland-signature|LinkChain|survey-security-dot-txt|infrawatch|Time/|r00ts3c-owned-you|nvdorz|Root\sSlut|NiggaBalls|BotPoke|GlobalWebSearch|xx032_bo9vs83_2a|sslshed|geckotrail|Wordup|Keydrop|Mozilla/5\.0\s\(compatible\)|John\sRecon|SPARK\sCOMMIT|masjesu|Komaru_The_Cat|Jesus\sChrist\sof\sNazareth\sis\sLORD|Kowai|Hakai|LoliSec|LMAO|^xenu|^(?:chrome|desktop|firefox|Abcd|Dark|KvshClient|node|Node\.js|Report\sRunner|url|Zeus|ZmEu)$|OnlyScans|TheInternetSearchx|Laravel\sReaver|bang2013|libredtail|Mozilliqa|Tiberius|honeygain|AW-WB-Filter|SaferSoftwashLeadGen|YourUserAgentHere|phpneuralnetwork|Crusader/|multi-country-domains|platform-fingerprint|greedyhand|DomainExtractor|nsfw-go-placeholder-filter|Intently\.co|KarnoProspectingStudio|recon-(?:crawler|engine)
     |[a-z0-9_-]*(?:(?<!cu|Hu|power[\s_]|m[\s_])bot(?![\s_]TAB|[\s_]?5[0-9]|[\s_]Senior|[\s_]Junior)|analyzer|appengine|archiver?|check(?:er)?|collector|crawl|crawler|(?<!node-|uclient-|Mikrotik/\d\.[x\d]\s|electron-)fetch(?:er)?|(?<!url)grabber|indexer|inspector|lookup|monitor|^parser|probe|(?<!Microsoft\s|banshee-)project(?!or)|(?<!Google\sWap\s|Blue\s|SpeedMode;\s)proxy|(?<!P)research|resolver|robots|(?<!Cam)scanner|scraper|script|searcher|(?<!-)security|spider(?!\s8)|study|transcoder|uptime|user[\s_]?agent|validator|-(?:AI|Extended|User)/)(?:[^a-z]|$)
     #x";
 }
